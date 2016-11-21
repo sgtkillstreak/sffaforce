@@ -1,0 +1,476 @@
+##########################################################################
+# Empire Policies
+# 
+# #####
+#
+# AI:
+# Base AI-weight is 100, if unchanged
+# AI will grab whatever policy-option has the highest weight
+#
+# #####
+# 
+##########################################################################
+
+light_force_users = {
+
+	potential = {
+		is_country_type = default   # only normal Empires should have this policy
+	}
+	
+	option = {
+		name = "sffaforce_light_force_allow"
+		
+		policy_flags = {
+			sffaforce_full_light_force
+		}
+		
+		AI_weight = {
+			base = 10
+			modifier = {
+				factor = 10
+				OR = {
+					has_ethic = "ethic_pacifist"
+					has_ethic = "ethic_fanatic_pacifist"
+				}
+			}
+			modifier = {
+				factor = 10
+				NOT = { 
+					has_ethic = "ethic_militarist"
+					has_ethic = "ethic_fanatic_militarist"
+				}
+			}
+		}
+	}
+	option = {
+		name = "sffaforce_light_force_discriminate"
+		
+		policy_flags = {
+			sffaforce_discriminated_light_force
+		}
+		
+		AI_weight = {
+			base = 5
+			modifier = {
+				factor = 10
+				OR = {
+					has_ethic = "ethic_militarist"
+					has_ethic = "ethic_fanatic_militarist"
+				}
+			}
+			modifier = {
+				factor = -10
+				OR = { 
+					has_ethic = "ethic_pacifist"
+					has_ethic = "ethic_fanatic_pacifist"
+				}
+			}
+		}
+	}
+	option = {
+		name = "sffaforce_light_force_purge"
+		
+		policy_flags = {
+			sffaforce_purge_light_force
+		}
+		
+		AI_weight = {
+			base = 0
+			modifier = {
+				factor = 5
+					has_ethic = "ethic_fanatic_militarist"
+			}
+			modifier = {
+				factor = -10
+				OR = { 
+					has_ethic = "ethic_pacifist"
+					has_ethic = "ethic_fanatic_pacifist"
+				}
+			}
+		}
+	}
+}
+
+grey_force_users = { 
+	potential = {
+		is_country_type = default   # only normal Empires should have this policy
+	}
+	
+	option = {
+		name = "sffaforce_grey_force_allow"
+		
+		policy_flags = {
+			sffaforce_full_grey_force
+		}
+		
+		AI_weight = {
+			base = 10
+			modifier = {
+				factor = 10
+				OR = {
+					has_ethic = "ethic_pacifist"
+					has_ethic = "ethic_fanatic_pacifist"
+				}
+			}
+			modifier = {
+				factor = 10
+				NOT = { 
+					has_ethic = "ethic_militarist"
+					has_ethic = "ethic_fanatic_militarist"
+				}
+			}
+		}
+	}
+	option = {
+		name = "sffaforce_grey_force_discriminate"
+		
+		policy_flags = {
+			sffaforce_discriminated_grey_force
+		}
+		
+		AI_weight = {
+			base = 5
+			modifier = {
+				factor = 10
+				OR = {
+					has_ethic = "ethic_militarist"
+					has_ethic = "ethic_fanatic_militarist"
+				}
+			}
+			modifier = {
+				factor = -10
+				OR = { 
+					has_ethic = "ethic_pacifist"
+					has_ethic = "ethic_fanatic_pacifist"
+				}
+			}
+		}
+	}
+	option = {
+		name = "sffaforce_grey_force_purge"
+		
+		policy_flags = {
+			sffaforce_purge_grey_force
+		}
+		
+		AI_weight = {
+			base = 0
+			modifier = {
+				factor = 5
+					has_ethic = "ethic_fanatic_militarist"
+			}
+			modifier = {
+				factor = -10
+				OR = { 
+					has_ethic = "ethic_pacifist"
+					has_ethic = "ethic_fanatic_pacifist"
+				}
+			}
+		}
+	}
+}
+
+dark_force_users = { 
+	potential = {
+		is_country_type = default   # only normal Empires should have this policy
+	}
+	
+	option = {
+		name = "sffaforce_dark_force_allow"
+		
+		policy_flags = {
+			sffaforce_full_dark_force
+		}
+		
+		AI_weight = {
+			base = 10
+			modifier = {
+				factor = 10
+				OR = {
+					has_ethic = "ethic_militarist"
+					has_ethic = "ethic_materialist"
+					has_ethic = "ethic_pacifist"
+				}
+			}
+			modifier = {
+				factor = 20
+				OR = {
+					has_ethic = "ethic_fanatic_militarist"
+					has_ethic = "ethic_fanatic_materialist"		
+				}
+			}
+			modifier = {
+				factor = -10
+				NOT = { 
+					has_ethic = "ethic_fanatic_pacifist"	
+				}
+			}
+		}
+	}
+	option = {
+		name = "sffaforce_dark_force_discriminate"
+		
+		policy_flags = {
+			sffaforce_discriminated_dark_force
+		}
+		
+		AI_weight = {
+			base = 5
+			modifier = {
+				factor = 10
+				OR = {
+					has_ethic = "ethic_pacifist"
+					has_ethic = "ethic_fanatic_pacifist"					
+				}
+			}
+			modifier = {
+				factor = 0
+				OR = { 
+					has_ethic = "ethic_militarist"
+					has_ethic = "ethic_fanatic_militarist"
+					has_ethic = "ethic_materialist"
+					has_ethic = "ethic_fanatic_materialist"		
+				}
+			}
+		}
+	}
+	option = {
+		name = "sffaforce_dark_force_purge"
+		
+		policy_flags = {
+			sffaforce_purge_dark_force
+		}
+		
+		AI_weight = {
+			base = 0
+			modifier = {
+				factor = 5
+					has_ethic = "ethic_fanatic_pacifist"
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_ethic = "ethic_pacifist"
+					has_ethic = "ethic_materialist"
+					has_ethic = "ethic_fanatic_materialist"							
+				}
+			}
+			modifier = {
+				factor = 0
+				OR = { 
+					has_ethic = "ethic_militarist"
+					has_ethic = "ethic_fanatic_militarist"
+				}
+			}		
+		}
+	}
+}
+
+state_religion = {
+	potential = {
+		is_country_type = default   # only normal Empires should have this policy
+		has_technology = tech_sffaforce_force_analysis
+	}
+	
+	option = {
+		name = "sffaforce_light_state_religion"
+		
+		policy_flags = {
+			sffaforce_light_state_religion_policy
+		}
+		
+		AI_weight = {
+			base = 10
+			modifier = {
+				factor = 10
+				OR = {
+					has_ethic = "ethic_militarist"
+					has_ethic = "ethic_materialist"
+					has_ethic = "ethic_pacifist"
+				}
+			}
+			modifier = {
+				factor = 20
+				OR = {
+					has_ethic = "ethic_fanatic_pacifist"	
+					has_ethic = "ethic_fanatic_materialist"		
+				}
+			}
+			modifier = {
+				factor = -10
+				NOT = { 
+					has_ethic = "ethic_fanatic_pacifist"	
+					has_ethic = "ethic_fanatic_militarist"
+				}
+			}
+		}
+		modifier = {
+			 max_embassies = 2
+			 influence_gain_mult = 0.05
+		}
+		pop_happiness = {
+			base = 0.05
+			modifier = {
+				add = 0.1
+				pop_has_ethic = "ethic_individualist"
+			}
+			modifier = {
+				add = 0.2
+				pop_has_ethic = "ethic_fanatic_individualist"
+			}
+			modifier = {
+				add = 0.05
+				pop_has_ethic = "ethic_pacifist"
+			}
+			modifier = {
+				add = 0.1
+				pop_has_ethic = "ethic_fanatic_pacifist"
+			}
+			modifier = {
+				add = 0.1
+				pop_has_ethic = "ethic_spiritualist"
+			}
+			modifier = {
+				add = 0.2
+				pop_has_ethic = "ethic_fanatic_spiritualist"
+			}
+			modifier = {
+				add = -0.1
+				pop_has_ethic = "ethic_militarist"
+			}
+			modifier = {
+				add = -0.2
+				pop_has_ethic = "ethic_fanatic_militarist"
+			}
+			modifier = {
+				add = -0.1
+				pop_has_ethic = "ethic_materialist"
+			}
+			modifier = {
+				add = -0.2
+				pop_has_ethic = "ethic_fanatic_materialist"
+			}
+		}
+	}
+	option = {
+		name = "sffaforce_grey_state_religion"
+		
+		policy_flags = {
+			sffaforce_grey_state_religion_policy
+		}
+		
+		AI_weight = {
+			base = 5
+			modifier = {
+				factor = 10
+				OR = {
+					has_ethic = "ethic_pacifist"
+					has_ethic = "ethic_spiritual"
+				}
+			}
+			modifier = {
+				factor = 10
+				OR = {
+					has_ethic = "ethic_fanatic_pacifist"					
+				}
+			}
+			modifier = {
+				factor = -10
+				OR = { 
+					has_ethic = "ethic_militarist"
+					has_ethic = "ethic_fanatic_militarist"
+					has_ethic = "ethic_materialist"
+					has_ethic = "ethic_fanatic_materialist"		
+				}
+			}
+		}
+		modifier = {
+			all_technology_research_speed = 0.10
+		}
+		pop_happiness = {
+			base = 0.05
+			modifier = {
+				add = 0.05
+				pop_has_ethic = "ethic_individualist"
+			}
+			modifier = {
+				add = 0.1
+				pop_has_ethic = "ethic_fanatic_individualist"
+			}
+			modifier = {
+				add = 0.05
+				pop_has_ethic = "ethic_materialist"
+			}
+			modifier = {
+				add = 0.1
+				pop_has_ethic = "ethic_fanatic_materialist"
+			}
+		}
+	}
+	option = {
+		name = "sffaforce_dark_state_religion"
+		
+		policy_flags = {
+			sffaforce_dark_state_religion_policy
+		}
+		
+		AI_weight = {
+			base = 0
+			modifier = {
+				factor = 5
+					has_ethic = "ethic_militarist"
+					has_ethic = "ethic_fanatic_materialist"							
+			}
+			modifier = {
+				factor = 10
+					has_ethic = "ethic_fanatic_militarist"
+			}
+			modifier = {
+				factor = -10
+				OR = {
+					has_ethic = "ethic_pacifist"
+					has_ethic = "ethic_materialist"
+				}
+			}
+			modifier = {
+				factor = -10
+				OR = { 
+					has_ethic = "ethic_materialist"
+				}
+			}	
+		}
+		modifier = {
+			slave_production_output = 0.10
+			slave_food_output = 0.10
+		}
+		pop_happiness = {
+			base = 0.05
+			modifier = {
+				add = -0.10
+				pop_has_ethic = "ethic_individualist"
+			}
+			modifier = {
+				add = -0.20
+				pop_has_ethic = "ethic_fanatic_individualist"
+			}
+			modifier = {
+				add = -0.1
+				pop_has_ethic = "ethic_pacifist"
+			}
+			modifier = {
+				add = -0.2
+				pop_has_ethic = "ethic_fanatic_pacifist"
+			}
+			modifier = {
+				add = 0.05
+				pop_has_ethic = "ethic_militarist"
+			}
+			modifier = {
+				add = 0.1
+				pop_has_ethic = "ethic_fanatic_militarist"
+			}
+		}
+	}
+}
+
+

@@ -1,0 +1,242 @@
+
+namespace = sffaforceupgrade
+
+#add force traits to new force leader
+country_event = {
+	id = sffaforceupgrade.1
+	hide_window = yes
+	
+	is_triggered_only = yes
+		
+	immediate = {
+		FROM = {
+			exists = leader
+			
+		FROM = {
+			remove_trait = sffaforce_admiral_force_sensitive_1
+			add_trait = sffaforce_admiral_force_sensitive_5 
+			add_trait = sffaforce_admiral_force_light_5
+			add_trait = sffaforce_admiral_force_dark_5
+			add_trait = sffaforce_admiral_force_grey_5
+				}
+			}
+		}
+	option = {
+		name = GOOD
+	}
+}
+
+# Leader levels their force sensitivity
+country_event = {
+	id = sffaforceupgrade.2
+	title = "sffaforceupgrade.2.name"
+	desc = "sffaforceupgrade.2.desc"
+	picture = GFX_evt_force_leader
+
+	is_triggered_only = yes
+
+	
+	immediate = {
+		from = {
+			if = {
+				limit = {
+					leader_class = admiral
+					has_level = 5
+					or = {
+						has_trait = sffaforce_admiral_force_sensitive_1
+						has_trait = sffaforce_admiral_force_sensitive_2
+						has_trait = sffaforce_admiral_force_sensitive_3
+						has_trait = sffaforce_admiral_force_sensitive_4
+						}
+					}
+				set_skill = 1
+				remove_trait = sffaforce_admiral_raw
+				if = {
+					limit = {
+					has_trait = sffaforce_admiral_force_sensitive_4
+					}
+					remove_trait = sffaforce_admiral_force_sensitive_4
+					add_trait = sffaforce_admiral_force_sensitive_5
+				}
+				if = {
+					limit = {
+					has_trait = sffaforce_admiral_force_sensitive_3
+					}
+					remove_trait = sffaforce_admiral_force_sensitive_3
+					add_trait = sffaforce_admiral_force_sensitive_4
+				}
+				if = {
+					limit = {
+					has_trait = sffaforce_admiral_force_sensitive_2
+					}
+					remove_trait = sffaforce_admiral_force_sensitive_2
+					add_trait = sffaforce_admiral_force_sensitive_3
+				}
+				if = {
+					limit = {
+					has_trait = sffaforce_admiral_force_sensitive_1
+					}
+					remove_trait = sffaforce_admiral_force_sensitive_1
+					add_trait = sffaforce_admiral_force_sensitive_2
+				}
+			}
+			if = {
+				limit = {
+					leader_class = general
+					has_level = 5
+					or = {
+						has_trait = sffaforce_general_force_sensitive_1
+						has_trait = sffaforce_general_force_sensitive_2
+						has_trait = sffaforce_general_force_sensitive_3
+						has_trait = sffaforce_general_force_sensitive_4
+						}
+					}
+				set_skill = 1
+				remove_trait = sffaforce_general_raw
+				if = {
+					limit = {
+					has_trait = sffaforce_general_force_sensitive_4
+					}
+					remove_trait = sffaforce_general_force_sensitive_4
+					add_trait = sffaforce_general_force_sensitive_5
+				}
+				if = {
+					limit = {
+					has_trait = sffaforce_general_force_sensitive_3
+					}
+					remove_trait = sffaforce_general_force_sensitive_3
+					add_trait = sffaforce_general_force_sensitive_4
+				}
+				if = {
+					limit = {
+					has_trait = sffaforce_general_force_sensitive_2
+					}
+					remove_trait = sffaforce_general_force_sensitive_2
+					add_trait = sffaforce_general_force_sensitive_3
+				}
+				if = {
+					limit = {
+					has_trait = sffaforce_general_force_sensitive_1
+					}
+					remove_trait = sffaforce_general_force_sensitive_1
+					add_trait = sffaforce_general_force_sensitive_2
+				}
+			}
+			if = {
+				limit = {
+					leader_class = scientist
+					has_level = 5
+					or = {
+						has_trait = sffaforce_scientist_force_sensitive_1
+						has_trait = sffaforce_scientist_force_sensitive_2
+						has_trait = sffaforce_scientist_force_sensitive_3
+						has_trait = sffaforce_scientist_force_sensitive_4
+						}
+					}
+				set_skill = 1
+				remove_trait = sffaforce_scientist_raw
+				if = {
+					limit = {
+					has_trait = sffaforce_scientist_force_sensitive_4
+					}
+					remove_trait = sffaforce_scientist_force_sensitive_4
+					add_trait = sffaforce_scientist_force_sensitive_5
+				}
+				if = {
+					limit = {
+					has_trait = sffaforce_scientist_force_sensitive_3
+					}
+					remove_trait = sffaforce_scientist_force_sensitive_3
+					add_trait = sffaforce_scientist_force_sensitive_4
+				}
+				if = {
+					limit = {
+					has_trait = sffaforce_scientist_force_sensitive_2
+					}
+					remove_trait = sffaforce_scientist_force_sensitive_2
+					add_trait = sffaforce_scientist_force_sensitive_3
+				}
+				if = {
+					limit = {
+					has_trait = sffaforce_scientist_force_sensitive_1
+					}
+					remove_trait = sffaforce_scientist_force_sensitive_1
+					add_trait = sffaforce_scientist_force_sensitive_2
+				}
+			}
+			if = {
+				limit = {
+					leader_class = governor
+					has_level = 5
+					or = {
+						has_trait = sffaforce_governor_force_sensitive_1
+						has_trait = sffaforce_governor_force_sensitive_2
+						has_trait = sffaforce_governor_force_sensitive_3
+						has_trait = sffaforce_governor_force_sensitive_4
+						}
+					}
+				set_skill = 1
+				remove_trait = sffaforce_governor_raw
+				if = {
+					limit = {
+					has_trait = sffaforce_governor_force_sensitive_4
+					}
+					remove_trait = sffaforce_governor_force_sensitive_4
+					add_trait = sffaforce_governor_force_sensitive_5
+				}
+				if = {
+					limit = {
+					has_trait = sffaforce_governor_force_sensitive_3
+					}
+					remove_trait = sffaforce_governor_force_sensitive_3
+					add_trait = sffaforce_governor_force_sensitive_4
+				}
+				if = {
+					limit = {
+					has_trait = sffaforce_governor_force_sensitive_2
+					}
+					remove_trait = sffaforce_governor_force_sensitive_2
+					add_trait = sffaforce_governor_force_sensitive_3
+				}
+				if = {
+					limit = {
+					has_trait = sffaforce_governor_force_sensitive_1
+					}
+					remove_trait = sffaforce_governor_force_sensitive_1
+					add_trait = sffaforce_governor_force_sensitive_2
+				}
+			}
+		}
+	}
+	option = {
+		name = Outstanding
+		}
+}
+
+#Force-Sensitive increases rank
+country_event = {
+	id = sffaforceupgrade.20
+	title = "sffaforce.9.name"
+	desc = "sffaforce.9.desc"
+	picture = GFX_evt_force_leader
+	
+	is_triggered_only = yes
+		
+	immediate = {
+		FROM = {
+			exists = leader
+			
+		FROM = {
+			remove_trait = sffaforce_admiral_force_sensitive_1
+			add_trait = sffaforce_admiral_force_sensitive_5 
+			add_trait = sffaforce_admiral_force_light_5
+			add_trait = sffaforce_admiral_force_dark_5
+			add_trait = sffaforce_admiral_force_grey_5
+				}
+			}
+		}
+	option = {
+		name = GOOD
+	}
+}
+

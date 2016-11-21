@@ -1,0 +1,10 @@
+### System Resources
+
+time = {
+}
+# Force reserves
+sffaforce_reserve = {
+	AI_category = strategic_resource
+	tradable = yes
+	is_rare = yes
+}

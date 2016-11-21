@@ -1,0 +1,141 @@
+namespace = sffaforceanom
+
+ship_event = {
+	id = sffaforceanom.1
+	title = sffaforceanom.1.name
+	desc = sffaforceanom.1.desc
+	picture = GFX_evt_ancient_alien_temple
+	show_sound = event_activating_unknown_technology
+	location = from
+
+	is_triggered_only = yes
+
+	trigger = {
+		from = { 
+			is_colonizable = yes 
+		}
+	}
+		immediate = {
+			owner = { country_event = { id = sffaforceruins.1 } }
+		}
+	option = {
+		name = sffaforceresp.2.a
+		hidden_effect = {
+			from = {
+				random_tile = {
+					limit = {
+						has_blocker = no
+						is_orbital_tile = no
+					}
+					clear_deposits = yes
+					set_building = sffaforce_building_sith_ruins
+				}
+			}
+		}
+	}
+}
+
+ship_event = {
+	id = sffaforceanom.2
+	title = sffaforceanom.1.name
+	desc = sffaforceanom.1.desc
+	picture = GFX_evt_ancient_alien_temple
+	show_sound = event_activating_unknown_technology
+	location = from
+
+	is_triggered_only = yes
+	
+	trigger = {
+		from = { 
+			is_colonizable = yes 
+		}
+	}
+	
+	immediate = {
+			owner = { country_event = { id = sffaforceruins.1 } }
+		}
+	
+	option = {
+		name = sffaforceresp.2.a
+		hidden_effect = {
+			from = {
+				random_tile = {
+					limit = {
+						has_blocker = no
+						is_orbital_tile = no
+					}
+					clear_deposits = yes
+					set_building = sffafocrce_building_grey_ruins
+				}
+			}
+		}
+	}
+}
+
+ship_event = {
+	id = sffaforceanom.3
+	title = sffaforceanom.1.name
+	desc = sffaforceanom.1.desc
+	picture = GFX_evt_ancient_alien_temple
+	show_sound = event_activating_unknown_technology
+	location = from
+
+	is_triggered_only = yes
+	
+	trigger = {
+		from = { 
+			is_colonizable = yes 
+		}
+	}
+	
+	immediate = {
+			owner = { country_event = { id = sffaforceruins.1 } }
+		}
+	
+	option = {
+		name = sffaforceresp.2.a
+		hidden_effect = {
+			from = {
+				random_tile = {
+					limit = {
+						has_blocker = no
+						is_orbital_tile = no
+					}
+					clear_deposits = yes
+					set_building = sffaforce_building_jedi_ruins
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = sffaforceanom.99
+	title = sffaforceanom.1.name
+	desc = sffaforceanom.1.desc
+	picture = GFX_evt_ancient_alien_temple
+	show_sound = event_activating_unknown_technology
+
+	is_triggered_only = yes
+	
+	
+	
+	option = {
+		name = sffaforceresp.2.a
+		create_leader = {
+			type = scientist
+			species = owner_main_species
+			name = random
+			skill = 1249
+			traits = {
+				trait = sffaforce_scientist_force_sensitive_1
+				}
+			}
+		}
+	option = {
+		name = sffaforceresp.1.b
+		last_created_leader = {
+			add_skill = 1
+		}
+	}
+}

@@ -1,0 +1,39 @@
+namespace = sffaforceruins
+
+
+#this is just one event for now, but is it's own file for the future when I incorporate Sith/Jeed'ai/Jedi
+#Each has their own creed, and discovering ruins can unlock lines of the creed. There will be a policy (two options, maintain and change. change fires an event with known lines)
+#each line gives differant bonuses and malus'. there can be a max of four lines when unlocked at force divergence (Force tech 3) and a final line at Force Tech 5
+country_event = { #we discovah ze ruinz!
+	id = sffaforceruins.1
+	title = "sffaforceruins.1.name"
+	desc = "sffaforceruins.1.desc"
+	picture = GFX_evt_federation_fleet
+	is_triggered_only = yes
+	
+	potential = {
+		owner = {
+			NOT = { is_country_type = fallen_empire }			}
+	}
+	
+	immediate = {
+		This = {
+			save_event_target_as = force_planet
+			solar_system = {
+				space_owner = {
+					if = {
+						limit = {
+							NOT = {
+								owner = { has_technology = tech_sffaforce_force_analysis }
+								}
+							}
+						add_research_option = { tech_sffaforce_force_analysis } 
+					}
+				}
+			}
+		}
+	}
+	option = {
+	name = GOOD
+	}
+}

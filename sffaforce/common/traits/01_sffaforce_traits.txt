@@ -1,0 +1,1538 @@
+
+# All leaders will have a common trait-point value set in defines, which they use to grab traits
+
+# leader_trait = yes - this tags the trait as a leader-trait and not a species-trait
+# initial = no - if set to no, this trait can not be granted to leaders when they are generated
+# leader_class = { admiral scientist }  -- OR  - if not set, it can be given to all leader-types except Rulers
+# requires_traits = { trait_psionic } -- AND - leader-trait can only be randomly given on generation if the leaders species has this trait
+# requires_governments = { despotic_hegemony ai_overlordship } -- OR - leader-trait can only be randomly given on generation if the Empire has this type of government form
+# prerequisites = { tech_psionic_theory } - AND - leader-trait can only be given if the technology specified has been researched by the Empire
+
+#garrison_health
+#pop_fortification_defense
+#leader_age
+#pop_other_species_happiness
+#pop_happiness
+#tile_resource_engineering_research_mult
+#tile_resource_physics_research_mult
+#tile_resource_society_research_mult
+#army_damage_mult
+#leader_skill_levels
+#species_leader_exp_gain
+#pop_environment_tolerance
+#trait_points
+
+#####################
+# Species Traits    #
+#####################
+
+trait_sffaforce_mystic = {
+	cost = 1
+	modification = no
+	initial = no
+
+		randomized = no
+		icon = "gfx/trait_sffa_froce_sensitive_ii.dds"
+		opposites = { "trait_sffaforce_hyper" "trait_sffaforce_blind"	}
+	
+	modifier = {
+		pop_fortification_defense = 0.05
+		leader_age = 5
+		army_damage_mult = 0.05
+		species_leader_exp_gain = 0.05
+	}
+}
+
+trait_sffaforce_hyper = {
+	cost = 4
+	modification = no
+		initial = no
+		randomized = no
+		icon = "gfx/trait_sffa_froce_sensitive_v.dds"
+		opposites = { "trait_sffaforce_mystic" "trait_sffaforce_blind"	}
+	
+	modifier = {
+		garrison_health = 0.15
+		pop_fortification_defense = 0.15
+		leader_age = 20
+		pop_other_species_happiness = 0.1
+		pop_happiness = 0.05
+		army_damage_mult = 0.15
+		species_leader_exp_gain = 0.20
+	}
+}
+
+#trait_sffaforce_blind = {
+#	cost = -2
+#	modification = no
+#		randomized = no
+#		opposites = { "trait_sffaforce_mystic" "trait_sffaforce_hyper"	}
+#	
+#	modifier = {
+#	}
+#}
+
+#ship_upkeep_mult
+#ship_evasion_mult
+#ship_emergency_ftl_mult
+#ship_auto_repair_add
+#ship_fire_rate_mult
+#ship_sensor_range_mult
+#ship_hitpoints_mult
+#ship_combat_speed_mult
+#ship_speed_mult
+#####################
+# Admiral Traits    #
+#####################
+
+sffaforce_admiral_raw = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_raw.dds"
+	modifier = {
+		ship_evasion_mult = -0.15
+		ship_emergency_ftl_mult = -0.15
+		ship_auto_repair_add = 0.15
+		ship_fire_rate_mult = 0.15
+		ship_sensor_range_mult = 0.15
+		ship_hitpoints_mult = 0.15
+		ship_combat_speed_mult = 0.15
+		ship_speed_mult = 0.15
+	}
+	leader_trait = yes
+	leader_class = { admiral }
+	opposites = { "sffaforce_admiral_force_sensitive_3" "sffaforce_admiral_force_sensitive_4" "sffaforce_admiral_force_sensitive_5" }
+	initial = no
+}
+
+sffaforce_admiral_force_sensitive_1 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_sensitive_i.dds"
+	modifier = {
+		ship_emergency_ftl_mult = -0.05
+		ship_evasion_mult = 0.05
+		ship_speed_mult = 0.05
+		ship_fire_rate_mult = 0.05
+	}
+	leader_trait = yes
+	leader_class = { admiral }
+	opposites = { "sffaforce_admiral_force_sensitive_2" "sffaforce_admiral_force_sensitive_3" "sffaforce_admiral_force_sensitive_4" "sffaforce_admiral_force_sensitive_5" }
+	initial = no
+}
+
+sffaforce_admiral_force_sensitive_2 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_sensitive_ii.dds"
+	modifier = {
+		ship_emergency_ftl_mult = -0.1
+		ship_evasion_mult = 0.1
+		ship_speed_mult = 0.1
+		ship_fire_rate_mult = 0.1
+	}
+	leader_trait = yes
+	leader_class = { admiral }
+	opposites = { "sffaforce_admiral_force_sensitive_1" "sffaforce_admiral_force_sensitive_3" "sffaforce_admiral_force_sensitive_4" "sffaforce_admiral_force_sensitive_5" }
+	initial = no
+}
+
+sffaforce_admiral_force_sensitive_3 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_sensitive_iii.dds"
+	modifier = {
+		ship_emergency_ftl_mult = -0.15
+		ship_evasion_mult = 0.15
+		ship_speed_mult = 0.15
+		ship_fire_rate_mult = 0.15
+	}
+	leader_trait = yes
+	leader_class = { admiral }
+	opposites = { "sffaforce_admiral_force_sensitive_2" "sffaforce_admiral_force_sensitive_1" "sffaforce_admiral_force_sensitive_4" "sffaforce_admiral_force_sensitive_5" }
+	initial = no
+}
+
+sffaforce_admiral_force_sensitive_4 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_sensitive_iv.dds"
+	modifier = {
+		ship_emergency_ftl_mult = -0.20
+		ship_evasion_mult = 0.20
+		ship_speed_mult = 0.20
+		ship_fire_rate_mult = 0.20
+	}
+	leader_trait = yes
+	leader_class = { admiral }
+	opposites = { "sffaforce_admiral_force_sensitive_2" "sffaforce_admiral_force_sensitive_3" "sffaforce_admiral_force_sensitive_1" "sffaforce_admiral_force_sensitive_5" }
+	initial = no
+}
+
+sffaforce_admiral_force_sensitive_5 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_sensitive_v.dds"
+	modifier = {
+		ship_emergency_ftl_mult = -0.25
+		ship_evasion_mult = 0.25
+		ship_speed_mult = 0.25
+		ship_fire_rate_mult = 0.25
+	}
+	leader_trait = yes
+	leader_class = { admiral }
+	opposites = { "sffaforce_admiral_force_sensitive_2" "sffaforce_admiral_force_sensitive_3" "sffaforce_admiral_force_sensitive_4" "sffaforce_admiral_force_sensitive_1" }
+	initial = no
+}
+
+sffaforce_admiral_force_light_1 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_light_i.dds"
+	modifier = {
+		ship_evasion_mult = 0.1
+		ship_auto_repair_add = 0.1
+	}
+	leader_trait = yes
+	leader_class = { admiral }
+	opposites = { "sffaforce_admiral_force_grey_1" "sffaforce_admiral_force_grey_2" "sffaforce_admiral_force_grey_3" "sffaforce_admiral_force_grey_4" "sffaforce_admiral_force_grey_5" "sffaforce_admiral_force_dark_1" "sffaforce_admiral_force_dark_2" "sffaforce_admiral_force_dark_3" "sffaforce_admiral_force_dark_4" "sffaforce_admiral_force_dark_5" "sffaforce_admiral_force_light_2" "sffaforce_admiral_force_light_3" "sffaforce_admiral_force_light_4" "sffaforce_admiral_force_light_5" }
+	initial = no
+}
+
+sffaforce_admiral_force_light_2 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_light_ii.dds"
+	modifier = {
+		ship_evasion_mult = 0.2
+		ship_auto_repair_add = 0.2
+	}
+	leader_trait = yes
+	leader_class = { admiral }
+	opposites = { "sffaforce_admiral_force_grey_1" "sffaforce_admiral_force_grey_2" "sffaforce_admiral_force_grey_3" "sffaforce_admiral_force_grey_4" "sffaforce_admiral_force_grey_5" "sffaforce_admiral_force_dark_1" "sffaforce_admiral_force_dark_2" "sffaforce_admiral_force_dark_3" "sffaforce_admiral_force_dark_4" "sffaforce_admiral_force_dark_5" "sffaforce_admiral_force_light_1" "sffaforce_admiral_force_light_3" "sffaforce_admiral_force_light_4" "sffaforce_admiral_force_light_5" }
+	initial = no
+}
+
+sffaforce_admiral_force_light_3 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_light_iii.dds"
+	modifier = {
+		ship_evasion_mult = 0.3
+		ship_auto_repair_add = 0.3
+	}
+	leader_trait = yes
+	leader_class = { admiral }
+	opposites = { "sffaforce_admiral_force_grey_1" "sffaforce_admiral_force_grey_2" "sffaforce_admiral_force_grey_3" "sffaforce_admiral_force_grey_4" "sffaforce_admiral_force_grey_5" "sffaforce_admiral_force_dark_1" "sffaforce_admiral_force_dark_2" "sffaforce_admiral_force_dark_3" "sffaforce_admiral_force_dark_4" "sffaforce_admiral_force_dark_5" "sffaforce_admiral_force_light_2" "sffaforce_admiral_force_light_1" "sffaforce_admiral_force_light_4" "sffaforce_admiral_force_light_5" }
+	initial = no
+}
+
+sffaforce_admiral_force_light_4 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_light_iv.dds"
+	modifier = {
+		ship_evasion_mult = 0.4
+		ship_auto_repair_add = 0.4
+	}
+	leader_trait = yes
+	leader_class = { admiral }
+	opposites = { "sffaforce_admiral_force_grey_1" "sffaforce_admiral_force_grey_2" "sffaforce_admiral_force_grey_3" "sffaforce_admiral_force_grey_4" "sffaforce_admiral_force_grey_5" "sffaforce_admiral_force_dark_1" "sffaforce_admiral_force_dark_2" "sffaforce_admiral_force_dark_3" "sffaforce_admiral_force_dark_4" "sffaforce_admiral_force_dark_5" "sffaforce_admiral_force_light_2" "sffaforce_admiral_force_light_3" "sffaforce_admiral_force_light_1" "sffaforce_admiral_force_light_5" }
+	initial = no
+}
+
+sffaforce_admiral_force_light_5 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_light_v.dds"
+	modifier = {
+		ship_evasion_mult = 0.5
+		ship_auto_repair_add = 0.5
+	}
+	leader_trait = yes
+	leader_class = { admiral }
+	opposites = { "sffaforce_admiral_force_grey_1" "sffaforce_admiral_force_grey_2" "sffaforce_admiral_force_grey_3" "sffaforce_admiral_force_grey_4" "sffaforce_admiral_force_grey_5" "sffaforce_admiral_force_dark_1" "sffaforce_admiral_force_dark_2" "sffaforce_admiral_force_dark_3" "sffaforce_admiral_force_dark_4" "sffaforce_admiral_force_dark_5" "sffaforce_admiral_force_light_2" "sffaforce_admiral_force_light_3" "sffaforce_admiral_force_light_4" "sffaforce_admiral_force_light_1" }
+	initial = no
+}
+
+
+sffaforce_admiral_force_grey_1 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_grey_i.dds"
+	modifier = {
+		ship_sensor_range_mult = 0.1
+		ship_speed_mult = 0.1
+	}
+	leader_trait = yes
+	leader_class = { admiral }
+	opposites = { "sffaforce_admiral_force_light_1" "sffaforce_admiral_force_light_2" "sffaforce_admiral_force_light_3" "sffaforce_admiral_force_light_4" "sffaforce_admiral_force_light_5" "sffaforce_admiral_force_dark_1" "sffaforce_admiral_force_dark_2" "sffaforce_admiral_force_dark_3" "sffaforce_admiral_force_dark_4" "sffaforce_admiral_force_dark_5" "sffaforce_admiral_force_grey_2" "sffaforce_admiral_force_grey_3" "sffaforce_admiral_force_grey_4" "sffaforce_admiral_force_grey_5" }
+	initial = no
+}
+
+sffaforce_admiral_force_grey_2 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_grey_ii.dds"
+	modifier = {
+		ship_sensor_range_mult = 0.2
+		ship_speed_mult = 0.2
+	}
+	leader_trait = yes
+	leader_class = { admiral }
+	opposites = { "sffaforce_admiral_force_light_1" "sffaforce_admiral_force_light_2" "sffaforce_admiral_force_light_3" "sffaforce_admiral_force_light_4" "sffaforce_admiral_force_light_5" "sffaforce_admiral_force_dark_1" "sffaforce_admiral_force_dark_2" "sffaforce_admiral_force_dark_3" "sffaforce_admiral_force_dark_4" "sffaforce_admiral_force_dark_5" "sffaforce_admiral_force_grey_1" "sffaforce_admiral_force_grey_3" "sffaforce_admiral_force_grey_4" "sffaforce_admiral_force_grey_5" }
+	initial = no
+}
+
+sffaforce_admiral_force_grey_3 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_grey_iii.dds"
+	modifier = {
+		ship_sensor_range_mult = 0.3
+		ship_speed_mult = 0.3
+	}
+	leader_trait = yes
+	leader_class = { admiral }
+	opposites = { "sffaforce_admiral_force_light_1" "sffaforce_admiral_force_light_2" "sffaforce_admiral_force_light_3" "sffaforce_admiral_force_light_4" "sffaforce_admiral_force_light_5" "sffaforce_admiral_force_dark_1" "sffaforce_admiral_force_dark_2" "sffaforce_admiral_force_dark_3" "sffaforce_admiral_force_dark_4" "sffaforce_admiral_force_dark_5" "sffaforce_admiral_force_grey_2" "sffaforce_admiral_force_grey_1" "sffaforce_admiral_force_grey_4" "sffaforce_admiral_force_grey_5" }
+	initial = no
+}
+
+sffaforce_admiral_force_grey_4 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_grey_iv.dds"
+	modifier = {
+		ship_sensor_range_mult = 0.4
+		ship_speed_mult = 0.4
+	}
+	leader_trait = yes
+	leader_class = { admiral }
+	opposites = { "sffaforce_admiral_force_light_1" "sffaforce_admiral_force_light_2" "sffaforce_admiral_force_light_3" "sffaforce_admiral_force_light_4" "sffaforce_admiral_force_light_5" "sffaforce_admiral_force_dark_1" "sffaforce_admiral_force_dark_2" "sffaforce_admiral_force_dark_3" "sffaforce_admiral_force_dark_4" "sffaforce_admiral_force_dark_5" "sffaforce_admiral_force_grey_2" "sffaforce_admiral_force_grey_3" "sffaforce_admiral_force_grey_1" "sffaforce_admiral_force_grey_5" }
+	initial = no
+}
+
+sffaforce_admiral_force_grey_5 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_grey_v.dds"
+	modifier = {
+		ship_sensor_range_mult = 0.5
+		ship_speed_mult = 0.5
+	}
+	leader_trait = yes
+	leader_class = { admiral }
+	opposites = { "sffaforce_admiral_force_light_1" "sffaforce_admiral_force_light_2" "sffaforce_admiral_force_light_3" "sffaforce_admiral_force_light_4" "sffaforce_admiral_force_light_5" "sffaforce_admiral_force_dark_1" "sffaforce_admiral_force_dark_2" "sffaforce_admiral_force_dark_3" "sffaforce_admiral_force_dark_4" "sffaforce_admiral_force_dark_5" "sffaforce_admiral_force_grey_2" "sffaforce_admiral_force_grey_3" "sffaforce_admiral_force_grey_4" "sffaforce_admiral_force_grey_1" }
+	initial = no
+}
+
+sffaforce_admiral_force_dark_1 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_dark_i.dds"
+	modifier = {
+		ship_upkeep_mult = -0.1
+		ship_fire_rate_mult = 0.1
+	}
+	leader_trait = yes
+	leader_class = { admiral }
+	opposites = { "sffaforce_admiral_force_grey_1" "sffaforce_admiral_force_grey_2" "sffaforce_admiral_force_grey_3" "sffaforce_admiral_force_grey_4" "sffaforce_admiral_force_grey_5" "sffaforce_admiral_force_light_1" "sffaforce_admiral_force_light_2" "sffaforce_admiral_force_light_3" "sffaforce_admiral_force_light_4" "sffaforce_admiral_force_light_5" "sffaforce_admiral_force_dark_2" "sffaforce_admiral_force_dark_3" "sffaforce_admiral_force_dark_4" "sffaforce_admiral_force_dark_5" }
+	initial = no
+}
+
+sffaforce_admiral_force_dark_2 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_dark_ii.dds"
+	modifier = {
+		ship_upkeep_mult = -0.2
+		ship_fire_rate_mult = 0.2
+	}
+	leader_trait = yes
+	leader_class = { admiral }
+	opposites = { "sffaforce_admiral_force_grey_1" "sffaforce_admiral_force_grey_2" "sffaforce_admiral_force_grey_3" "sffaforce_admiral_force_grey_4" "sffaforce_admiral_force_grey_5" "sffaforce_admiral_force_light_1" "sffaforce_admiral_force_light_2" "sffaforce_admiral_force_light_3" "sffaforce_admiral_force_light_4" "sffaforce_admiral_force_light_5" "sffaforce_admiral_force_dark_1" "sffaforce_admiral_force_dark_3" "sffaforce_admiral_force_dark_4" "sffaforce_admiral_force_dark_5" }
+	initial = no
+}
+
+sffaforce_admiral_force_dark_3 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_dark_iii.dds"
+	modifier = {
+		ship_upkeep_mult = -0.3
+		ship_fire_rate_mult = 0.3
+	}
+	leader_trait = yes
+	leader_class = { admiral }
+	opposites = { "sffaforce_admiral_force_grey_1" "sffaforce_admiral_force_grey_2" "sffaforce_admiral_force_grey_3" "sffaforce_admiral_force_grey_4" "sffaforce_admiral_force_grey_5" "sffaforce_admiral_force_light_1" "sffaforce_admiral_force_light_2" "sffaforce_admiral_force_light_3" "sffaforce_admiral_force_light_4" "sffaforce_admiral_force_light_5" "sffaforce_admiral_force_dark_2" "sffaforce_admiral_force_dark_1" "sffaforce_admiral_force_dark_4" "sffaforce_admiral_force_dark_5" }
+	initial = no
+}
+
+sffaforce_admiral_force_dark_4 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_dark_iv.dds"
+	modifier = {
+		ship_upkeep_mult = -0.4
+		ship_fire_rate_mult = 0.4
+	}
+	leader_trait = yes
+	leader_class = { admiral }
+	opposites = { "sffaforce_admiral_force_grey_1" "sffaforce_admiral_force_grey_2" "sffaforce_admiral_force_grey_3" "sffaforce_admiral_force_grey_4" "sffaforce_admiral_force_grey_5" "sffaforce_admiral_force_light_1" "sffaforce_admiral_force_light_2" "sffaforce_admiral_force_light_3" "sffaforce_admiral_force_light_4" "sffaforce_admiral_force_light_5" "sffaforce_admiral_force_dark_2" "sffaforce_admiral_force_dark_3" "sffaforce_admiral_force_dark_1" "sffaforce_admiral_force_dark_5" }
+	initial = no
+}
+
+sffaforce_admiral_force_dark_5 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_dark_v.dds"
+	modifier = {
+		ship_upkeep_mult = -0.5
+		ship_fire_rate_mult = 0.5
+	}
+	leader_trait = yes
+	leader_class = { admiral }
+	opposites = { "sffaforce_admiral_force_grey_1" "sffaforce_admiral_force_grey_2" "sffaforce_admiral_force_grey_3" "sffaforce_admiral_force_grey_4" "sffaforce_admiral_force_grey_5" "sffaforce_admiral_force_light_1" "sffaforce_admiral_force_light_2" "sffaforce_admiral_force_light_3" "sffaforce_admiral_force_light_4" "sffaforce_admiral_force_light_5" "sffaforce_admiral_force_dark_2" "sffaforce_admiral_force_dark_3" "sffaforce_admiral_force_dark_4" "sffaforce_admiral_force_dark_1" }
+	initial = no
+}
+
+#army_defense_morale_mult
+#army_defense_damage_mult
+#army_attack_morale_mult
+#army_attack_damage_mult
+#army_morale
+#army_upkeep_mult 
+
+#-----------------------------------------------------------------------------------------------------
+
+
+#####################
+#  General Traits   #
+#####################
+
+sffaforce_general_raw = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_raw.dds"
+	modifier = {
+		army_defense_morale_mult = -0.05
+		army_defense_damage_mult = -0.05
+		army_attack_morale_mult = -0.05
+		army_attack_damage_mult = -0.05
+		army_morale = -0.05
+	}
+	leader_trait = yes
+	leader_class = { general }
+	opposites = { "sffaforce_general_force_sensitive_3" "sffaforce_general_force_sensitive_4" "sffaforce_general_force_sensitive_5" }
+	initial = no
+}
+
+sffaforce_general_force_sensitive_1 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_sensitive_i.dds"
+	modifier = {
+		army_defense_morale_mult = 0.05
+		army_defense_damage_mult = 0.05
+		army_attack_morale_mult = 0.05
+		army_attack_damage_mult = 0.05
+		army_morale = 0.05
+	}
+	leader_trait = yes
+	leader_class = { general }
+	opposites = { "sffaforce_general_force_sensitive_2" "sffaforce_general_force_sensitive_3" "sffaforce_general_force_sensitive_4" "sffaforce_general_force_sensitive_5" }
+	initial = no
+}
+
+sffaforce_general_force_sensitive_2 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_sensitive_ii.dds"
+	modifier = {
+		army_defense_morale_mult = 0.1
+		army_defense_damage_mult = 0.1
+		army_attack_morale_mult = 0.1
+		army_attack_damage_mult = 0.1
+		army_morale = 0.1
+	}
+	leader_trait = yes
+	leader_class = { general }
+	opposites = { "sffaforce_general_force_sensitive_1" "sffaforce_general_force_sensitive_3" "sffaforce_general_force_sensitive_4" "sffaforce_general_force_sensitive_5" }
+	initial = no
+}
+
+sffaforce_general_force_sensitive_3 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_sensitive_iii.dds"
+	modifier = {
+		army_defense_morale_mult = 0.15
+		army_defense_damage_mult = 0.15
+		army_attack_morale_mult = 0.15
+		army_attack_damage_mult = 0.15
+		army_morale = 0.15
+	}
+	leader_trait = yes
+	leader_class = { general }
+	opposites = { "sffaforce_general_force_sensitive_2" "sffaforce_general_force_sensitive_1" "sffaforce_general_force_sensitive_4" "sffaforce_general_force_sensitive_5" }
+	initial = no
+}
+
+sffaforce_general_force_sensitive_4 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_sensitive_iv.dds"
+	modifier = {
+		army_defense_morale_mult = 0.20
+		army_defense_damage_mult = 0.20
+		army_attack_morale_mult = 0.20
+		army_attack_damage_mult = 0.20
+		army_morale = 0.20
+	}
+	leader_trait = yes
+	leader_class = { general }
+	opposites = { "sffaforce_general_force_sensitive_2" "sffaforce_general_force_sensitive_3" "sffaforce_general_force_sensitive_1" "sffaforce_general_force_sensitive_5" }
+	initial = no
+}
+
+sffaforce_general_force_sensitive_5 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_sensitive_v.dds"
+	modifier = {
+		army_defense_morale_mult = 0.25
+		army_defense_damage_mult = 0.25
+		army_attack_morale_mult = 0.25
+		army_attack_damage_mult = 0.25
+		army_morale = 0.25
+	}
+	leader_trait = yes
+	leader_class = { general }
+	opposites = { "sffaforce_general_force_sensitive_2" "sffaforce_general_force_sensitive_3" "sffaforce_general_force_sensitive_4" "sffaforce_general_force_sensitive_1" }
+	initial = no
+}
+
+sffaforce_general_force_light_1 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_light_i.dds"
+	modifier = {
+		army_defense_morale_mult = 0.1
+		army_morale = 0.1
+	}
+	leader_trait = yes
+	leader_class = { general }
+	opposites = { "sffaforce_general_force_dark_1" "sffaforce_general_force_dark_2" "sffaforce_general_force_dark_3" "sffaforce_general_force_dark_4" "sffaforce_general_force_dark_5" "sffaforce_general_force_grey_1" "sffaforce_general_force_grey_2" "sffaforce_general_force_grey_3" "sffaforce_general_force_grey_4" "sffaforce_general_force_grey_5" "sffaforce_general_force_light_2" "sffaforce_general_force_light_3" "sffaforce_general_force_light_4" "sffaforce_general_force_light_5" }
+	initial = no
+}
+
+sffaforce_general_force_light_2 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_light_ii.dds"
+	modifier = {
+		army_defense_morale_mult = 0.2
+		army_morale = 0.2
+	}
+	leader_trait = yes
+	leader_class = { general }
+	opposites = { "sffaforce_general_force_dark_1" "sffaforce_general_force_dark_2" "sffaforce_general_force_dark_3" "sffaforce_general_force_dark_4" "sffaforce_general_force_dark_5" "sffaforce_general_force_grey_1" "sffaforce_general_force_grey_2" "sffaforce_general_force_grey_3" "sffaforce_general_force_grey_4" "sffaforce_general_force_grey_5" "sffaforce_general_force_light_1" "sffaforce_general_force_light_3" "sffaforce_general_force_light_4" "sffaforce_general_force_light_5" }
+	initial = no
+}
+
+sffaforce_general_force_light_3 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_light_iii.dds"
+	modifier = {
+		army_defense_morale_mult = 0.3
+		army_morale = 0.3
+	}
+	leader_trait = yes
+	leader_class = { general }
+	opposites = { "sffaforce_general_force_dark_1" "sffaforce_general_force_dark_2" "sffaforce_general_force_dark_3" "sffaforce_general_force_dark_4" "sffaforce_general_force_dark_5" "sffaforce_general_force_grey_1" "sffaforce_general_force_grey_2" "sffaforce_general_force_grey_3" "sffaforce_general_force_grey_4" "sffaforce_general_force_grey_5" "sffaforce_general_force_light_2" "sffaforce_general_force_light_1" "sffaforce_general_force_light_4" "sffaforce_general_force_light_5" }
+	initial = no
+}
+
+sffaforce_general_force_light_4 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_light_iv.dds"
+	modifier = {
+		army_defense_morale_mult = 0.4
+		army_morale = 0.4
+	}
+	leader_trait = yes
+	leader_class = { general }
+	opposites = { "sffaforce_general_force_dark_1" "sffaforce_general_force_dark_2" "sffaforce_general_force_dark_3" "sffaforce_general_force_dark_4" "sffaforce_general_force_dark_5" "sffaforce_general_force_grey_1" "sffaforce_general_force_grey_2" "sffaforce_general_force_grey_3" "sffaforce_general_force_grey_4" "sffaforce_general_force_grey_5" "sffaforce_general_force_light_2" "sffaforce_general_force_light_3" "sffaforce_general_force_light_1" "sffaforce_general_force_light_5" }
+	initial = no
+}
+
+sffaforce_general_force_light_5 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_light_v.dds"
+	modifier = {
+		army_defense_morale_mult = 0.5
+		army_morale = 0.5
+	}
+	leader_trait = yes
+	leader_class = { general }
+	opposites = { "sffaforce_general_force_dark_1" "sffaforce_general_force_dark_2" "sffaforce_general_force_dark_3" "sffaforce_general_force_dark_4" "sffaforce_general_force_dark_5" "sffaforce_general_force_grey_1" "sffaforce_general_force_grey_2" "sffaforce_general_force_grey_3" "sffaforce_general_force_grey_4" "sffaforce_general_force_grey_5" "sffaforce_general_force_light_2" "sffaforce_general_force_light_3" "sffaforce_general_force_light_4" "sffaforce_general_force_light_1" }
+	initial = no
+}
+
+sffaforce_general_force_grey_1 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_grey_i.dds"
+	modifier = {
+		army_defense_damage_mult = 0.1
+		army_attack_damage_mult = 0.1
+	}
+	leader_trait = yes
+	leader_class = { general }
+	opposites = { "sffaforce_general_force_light_1" "sffaforce_general_force_light_2" "sffaforce_general_force_light_3" "sffaforce_general_force_light_4" "sffaforce_general_force_light_5" "sffaforce_general_force_dark_1" "sffaforce_general_force_dark_2" "sffaforce_general_force_dark_3" "sffaforce_general_force_dark_4" "sffaforce_general_force_dark_5" "sffaforce_general_force_grey_2" "sffaforce_general_force_grey_3" "sffaforce_general_force_grey_4" "sffaforce_general_force_grey_5" }
+	initial = no
+}
+
+sffaforce_general_force_grey_2 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_grey_ii.dds"
+	modifier = {
+		army_defense_damage_mult = 0.2
+		army_attack_damage_mult = 0.2
+	}
+	leader_trait = yes
+	leader_class = { general }
+	opposites = { "sffaforce_general_force_light_1" "sffaforce_general_force_light_2" "sffaforce_general_force_light_3" "sffaforce_general_force_light_4" "sffaforce_general_force_light_5" "sffaforce_general_force_dark_1" "sffaforce_general_force_dark_2" "sffaforce_general_force_dark_3" "sffaforce_general_force_dark_4" "sffaforce_general_force_dark_5" "sffaforce_general_force_grey_1" "sffaforce_general_force_grey_3" "sffaforce_general_force_grey_4" "sffaforce_general_force_grey_5" }
+	initial = no
+}
+
+sffaforce_general_force_grey_3 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_grey_iii.dds"
+	modifier = {
+		army_defense_damage_mult = 0.3
+		army_attack_damage_mult = 0.3
+	}
+	leader_trait = yes
+	leader_class = { general }
+	opposites = { "sffaforce_general_force_light_1" "sffaforce_general_force_light_2" "sffaforce_general_force_light_3" "sffaforce_general_force_light_4" "sffaforce_general_force_light_5" "sffaforce_general_force_dark_1" "sffaforce_general_force_dark_2" "sffaforce_general_force_dark_3" "sffaforce_general_force_dark_4" "sffaforce_general_force_dark_5" "sffaforce_general_force_grey_2" "sffaforce_general_force_grey_1" "sffaforce_general_force_grey_4" "sffaforce_general_force_grey_5" }
+	initial = no
+}
+
+sffaforce_general_force_grey_4 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_grey_iv.dds"
+	modifier = {
+		army_defense_damage_mult = 0.4
+		army_attack_damage_mult = 0.4
+	}
+	leader_trait = yes
+	leader_class = { general }
+	opposites = { "sffaforce_general_force_light_1" "sffaforce_general_force_light_2" "sffaforce_general_force_light_3" "sffaforce_general_force_light_4" "sffaforce_general_force_light_5" "sffaforce_general_force_dark_1" "sffaforce_general_force_dark_2" "sffaforce_general_force_dark_3" "sffaforce_general_force_dark_4" "sffaforce_general_force_dark_5" "sffaforce_general_force_grey_2" "sffaforce_general_force_grey_3" "sffaforce_general_force_grey_1" "sffaforce_general_force_grey_5" }
+	initial = no
+}
+
+sffaforce_general_force_grey_5 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_grey_v.dds"
+	modifier = {
+		army_defense_damage_mult = 0.5
+		army_attack_damage_mult = 0.5
+	}
+	leader_trait = yes
+	leader_class = { general }
+	opposites = { "sffaforce_general_force_light_1" "sffaforce_general_force_light_2" "sffaforce_general_force_light_3" "sffaforce_general_force_light_4" "sffaforce_general_force_light_5" "sffaforce_general_force_dark_1" "sffaforce_general_force_dark_2" "sffaforce_general_force_dark_3" "sffaforce_general_force_dark_4" "sffaforce_general_force_dark_5""sffaforce_general_force_grey_2" "sffaforce_general_force_grey_3" "sffaforce_general_force_grey_4" "sffaforce_general_force_grey_1" }
+	initial = no
+}
+
+sffaforce_general_force_dark_1 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_dark_i.dds"
+	modifier = {
+		army_attack_morale_mult = 0.1
+		army_upkeep_mult = -0.1
+	}
+	leader_trait = yes
+	leader_class = { general }
+	opposites = { "sffaforce_general_force_grey_1" "sffaforce_general_force_grey_2" "sffaforce_general_force_grey_3" "sffaforce_general_force_grey_4" "sffaforce_general_force_grey_5" "sffaforce_general_force_light_1" "sffaforce_general_force_light_2" "sffaforce_general_force_light_3" "sffaforce_general_force_light_4" "sffaforce_general_force_light_5" "sffaforce_general_force_dark_2" "sffaforce_general_force_dark_3" "sffaforce_general_force_dark_4" "sffaforce_general_force_dark_5" }
+	initial = no
+}
+
+sffaforce_general_force_dark_2 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_dark_ii.dds"
+	modifier = {
+		army_attack_morale_mult = 0.2
+		army_upkeep_mult = -0.2
+	}
+	leader_trait = yes
+	leader_class = { general }
+	opposites = { "sffaforce_general_force_grey_1" "sffaforce_general_force_grey_2" "sffaforce_general_force_grey_3" "sffaforce_general_force_grey_4" "sffaforce_general_force_grey_5" "sffaforce_general_force_light_1" "sffaforce_general_force_light_2" "sffaforce_general_force_light_3" "sffaforce_general_force_light_4" "sffaforce_general_force_light_5" "sffaforce_general_force_dark_1" "sffaforce_general_force_dark_3" "sffaforce_general_force_dark_4" "sffaforce_general_force_dark_5" }
+	initial = no
+}
+
+sffaforce_general_force_dark_3 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_dark_iii.dds"
+	modifier = {
+		army_attack_morale_mult = 0.3
+		army_upkeep_mult = -0.3
+	}
+	leader_trait = yes
+	leader_class = { general }
+	opposites = { "sffaforce_general_force_grey_1" "sffaforce_general_force_grey_2" "sffaforce_general_force_grey_3" "sffaforce_general_force_grey_4" "sffaforce_general_force_grey_5" "sffaforce_general_force_light_1" "sffaforce_general_force_light_2" "sffaforce_general_force_light_3" "sffaforce_general_force_light_4" "sffaforce_general_force_light_5" "sffaforce_general_force_dark_2" "sffaforce_general_force_dark_1" "sffaforce_general_force_dark_4" "sffaforce_general_force_dark_5" }
+	initial = no
+}
+
+sffaforce_general_force_dark_4 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_dark_iv.dds"
+	modifier = {
+		army_attack_morale_mult = 0.4
+		army_upkeep_mult = -0.4
+	}
+	leader_trait = yes
+	leader_class = { general }
+	opposites = { "sffaforce_general_force_grey_1" "sffaforce_general_force_grey_2" "sffaforce_general_force_grey_3" "sffaforce_general_force_grey_4" "sffaforce_general_force_grey_5" "sffaforce_general_force_light_1" "sffaforce_general_force_light_2" "sffaforce_general_force_light_3" "sffaforce_general_force_light_4" "sffaforce_general_force_light_5" "sffaforce_general_force_dark_2" "sffaforce_general_force_dark_3" "sffaforce_general_force_dark_1" "sffaforce_general_force_dark_5" }
+	initial = no
+}
+
+sffaforce_general_force_dark_5 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_dark_v.dds"
+	modifier = {
+		army_attack_morale_mult = 0.5
+		army_upkeep_mult = -0.5
+	}
+	leader_trait = yes
+	leader_class = { general }
+	opposites = { "sffaforce_general_force_grey_1" "sffaforce_general_force_grey_2" "sffaforce_general_force_grey_3" "sffaforce_general_force_grey_4" "sffaforce_general_force_grey_5" "sffaforce_general_force_light_1" "sffaforce_general_force_light_2" "sffaforce_general_force_light_3" "sffaforce_general_force_light_4" "sffaforce_general_force_light_5" "sffaforce_general_force_dark_2" "sffaforce_general_force_dark_3" "sffaforce_general_force_dark_4" "sffaforce_general_force_dark_1" }
+	initial = no
+}
+
+#planet_army_build_speed_mult
+#planet_army_build_cost_mult
+#planet_ship_build_speed_mult
+#planet_building_cost_mult
+#planet_clear_blocker_time_mult
+#planet_clear_blocker_cost_mult
+#tile_resource_society_research_mult
+#tile_resource_physics_research_mult
+#tile_resource_engineering_research_mult
+#building_hydroponics_farm_1_build_cost_mult
+#tile_resource_food_mult
+#building_time_mult
+#spaceport_module_cost_mult
+#spaceport_ship_build_cost_mult
+#garrison_health
+#slave_food_output
+#slave_production_output
+
+#-----------------------------------------------------------------------------------------------------
+
+
+
+#####################
+# Governor Traits    #
+#####################
+
+sffaforce_governor_raw = {
+	cost = 99
+	modification = no
+	icon = "gfx/trait_sffa_force_raw.dds"
+	modifier = {
+		planet_army_build_speed_mult = -0.05
+		planet_army_build_cost_mult = -0.05
+		planet_ship_build_speed_mult = -0.05
+		planet_building_cost_mult = -0.05
+		planet_clear_blocker_time_mult = -0.05
+		planet_clear_blocker_cost_mult = -0.05
+		tile_resource_food_mult = -0.05
+		building_time_mult = -0.05
+		garrison_health = -0.05
+	}
+	leader_trait = yes
+	leader_class = { governor }
+	opposites = { "sffaforce_governor_force_sensitive_3" "sffaforce_governor_force_sensitive_4" "sffaforce_governor_force_sensitive_5" }
+	initial = no
+}
+
+sffaforce_governor_force_sensitive_1 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_sensitive_i.dds"
+	modifier = {
+		garrison_health = 0.05
+		tile_resource_engineering_research_mult = 0.05
+		tile_resource_physics_research_mult = 0.05
+		tile_resource_society_research_mult = 0.05
+	}
+	leader_trait = yes
+	leader_class = { governor }
+	opposites = { "sffaforce_governor_force_sensitive_2" "sffaforce_governor_force_sensitive_3" "sffaforce_governor_force_sensitive_4" "sffaforce_governor_force_sensitive_5" }
+	initial = no
+}
+
+sffaforce_governor_force_sensitive_2 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_sensitive_ii.dds"
+	modifier = {
+		garrison_health = 0.1
+		tile_resource_engineering_research_mult = 0.1
+		tile_resource_physics_research_mult = 0.1
+		tile_resource_society_research_mult = 0.1
+	}
+	leader_trait = yes
+	leader_class = { governor }
+	opposites = { "sffaforce_governor_force_sensitive_1" "sffaforce_governor_force_sensitive_3" "sffaforce_governor_force_sensitive_4" "sffaforce_governor_force_sensitive_5" }
+	initial = no
+}
+
+sffaforce_governor_force_sensitive_3 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_sensitive_iii.dds"
+	modifier = {
+		garrison_health = 0.15
+		tile_resource_engineering_research_mult = 0.15
+		tile_resource_physics_research_mult = 0.15
+		tile_resource_society_research_mult = 0.15
+	}
+	leader_trait = yes
+	leader_class = { governor }
+	opposites = { "sffaforce_governor_force_sensitive_2" "sffaforce_governor_force_sensitive_1" "sffaforce_governor_force_sensitive_4" "sffaforce_governor_force_sensitive_5" }
+	initial = no
+}
+
+sffaforce_governor_force_sensitive_4 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_sensitive_iv.dds"
+	modifier = {
+		garrison_health = 0.20
+		tile_resource_engineering_research_mult = 0.20
+		tile_resource_physics_research_mult = 0.20
+		tile_resource_society_research_mult = 0.20
+	}
+	leader_trait = yes
+	leader_class = { governor }
+	opposites = { "sffaforce_governor_force_sensitive_2" "sffaforce_governor_force_sensitive_3" "sffaforce_governor_force_sensitive_1" "sffaforce_governor_force_sensitive_5" }
+	initial = no
+}
+
+sffaforce_governor_force_sensitive_5 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_sensitive_v.dds"
+	modifier = {
+		garrison_health = 0.25
+		tile_resource_engineering_research_mult = 0.25
+		tile_resource_physics_research_mult = 0.25
+		tile_resource_society_research_mult = 0.25
+	}
+	leader_trait = yes
+	leader_class = { governor }
+	opposites = { "sffaforce_governor_force_sensitive_2" "sffaforce_governor_force_sensitive_3" "sffaforce_governor_force_sensitive_4" "sffaforce_governor_force_sensitive_1" }
+	initial = no
+}
+
+sffaforce_governor_force_light_1 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_light_i.dds"
+	modifier = {
+		tile_resource_food_mult = -0.1
+		planet_building_cost_mult = -0.05
+		garrison_health = 0.1
+	}
+	leader_trait = yes
+	leader_class = { governor }
+	opposites = { "sffaforce_governor_force_light_2" "sffaforce_governor_force_light_3" "sffaforce_governor_force_light_4" "sffaforce_governor_force_light_5" "sffaforce_governor_force_dark_1" "sffaforce_governor_force_dark_2" "sffaforce_governor_force_dark_3" "sffaforce_governor_force_dark_4" "sffaforce_governor_force_dark_5" "sffaforce_governor_force_grey_1" "sffaforce_governor_force_grey_2" "sffaforce_governor_force_grey_3" "sffaforce_governor_force_grey_4" "sffaforce_governor_force_grey_5" }
+	initial = no
+}
+
+sffaforce_governor_force_light_2 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_light_ii.dds"
+	modifier = {
+		tile_resource_food_mult = -0.2
+		planet_building_cost_mult = -0.1
+		garrison_health = 0.2
+	}
+	leader_trait = yes
+	leader_class = { governor }
+	opposites = { "sffaforce_governor_force_light_1" "sffaforce_governor_force_light_3" "sffaforce_governor_force_light_4" "sffaforce_governor_force_light_5" "sffaforce_governor_force_dark_1" "sffaforce_governor_force_dark_2" "sffaforce_governor_force_dark_3" "sffaforce_governor_force_dark_4" "sffaforce_governor_force_dark_5" "sffaforce_governor_force_grey_1" "sffaforce_governor_force_grey_2" "sffaforce_governor_force_grey_3" "sffaforce_governor_force_grey_4" "sffaforce_governor_force_grey_5" }
+	initial = no
+}
+
+sffaforce_governor_force_light_3 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_light_iii.dds"
+	modifier = {
+		tile_resource_food_mult = -0.3
+		planet_building_cost_mult = -0.15
+		garrison_health = 0.3
+	}
+	leader_trait = yes
+	leader_class = { governor }
+	opposites = { "sffaforce_governor_force_light_2" "sffaforce_governor_force_light_1" "sffaforce_governor_force_light_4" "sffaforce_governor_force_light_5" "sffaforce_governor_force_dark_1" "sffaforce_governor_force_dark_2" "sffaforce_governor_force_dark_3" "sffaforce_governor_force_dark_4" "sffaforce_governor_force_dark_5" "sffaforce_governor_force_grey_1" "sffaforce_governor_force_grey_2" "sffaforce_governor_force_grey_3" "sffaforce_governor_force_grey_4" "sffaforce_governor_force_grey_5" }
+	initial = no
+}
+
+sffaforce_governor_force_light_4 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_light_iv.dds"
+	modifier = {
+		tile_resource_food_mult = -0.4
+		planet_building_cost_mult = -0.2
+		garrison_health = 0.4
+	}
+	leader_trait = yes
+	leader_class = { governor }
+	opposites = { "sffaforce_governor_force_light_2" "sffaforce_governor_force_light_3" "sffaforce_governor_force_light_1" "sffaforce_governor_force_light_5" "sffaforce_governor_force_dark_1" "sffaforce_governor_force_dark_2" "sffaforce_governor_force_dark_3" "sffaforce_governor_force_dark_4" "sffaforce_governor_force_dark_5" "sffaforce_governor_force_grey_1" "sffaforce_governor_force_grey_2" "sffaforce_governor_force_grey_3" "sffaforce_governor_force_grey_4" "sffaforce_governor_force_grey_5" }
+	initial = no
+}
+
+sffaforce_governor_force_light_5 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_light_v.dds"
+	modifier = {
+		tile_resource_food_mult = -0.5
+		planet_building_cost_mult = -0.25
+		garrison_health = 0.5
+	}
+	leader_trait = yes
+	leader_class = { governor }
+	opposites = { "sffaforce_governor_force_light_2" "sffaforce_governor_force_light_3" "sffaforce_governor_force_light_4" "sffaforce_governor_force_light_1" "sffaforce_governor_force_dark_1" "sffaforce_governor_force_dark_2" "sffaforce_governor_force_dark_3" "sffaforce_governor_force_dark_4" "sffaforce_governor_force_dark_5" "sffaforce_governor_force_grey_1" "sffaforce_governor_force_grey_2" "sffaforce_governor_force_grey_3" "sffaforce_governor_force_grey_4" "sffaforce_governor_force_grey_5" }
+	initial = no
+}
+
+sffaforce_governor_force_grey_1 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_grey_i.dds"
+	modifier = {
+		tile_resource_engineering_research_mult = 0.1
+		tile_resource_physics_research_mult = 0.1
+		tile_resource_society_research_mult = 0.1
+	}
+	leader_trait = yes
+	leader_class = { governor }
+	opposites = { "sffaforce_governor_force_grey_2" "sffaforce_governor_force_grey_3" "sffaforce_governor_force_grey_4" "sffaforce_governor_force_grey_5" "sffaforce_governor_force_dark_1" "sffaforce_governor_force_dark_2" "sffaforce_governor_force_dark_3" "sffaforce_governor_force_dark_4" "sffaforce_governor_force_dark_5" "sffaforce_governor_force_light_1" "sffaforce_governor_force_light_2" "sffaforce_governor_force_light_3" "sffaforce_governor_force_light_4" "sffaforce_governor_force_light_5" }
+	initial = no
+}
+
+sffaforce_governor_force_grey_2 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_grey_ii.dds"
+	modifier = {
+		tile_resource_engineering_research_mult = 0.2
+		tile_resource_physics_research_mult = 0.2
+		tile_resource_society_research_mult = 0.2
+	}
+	leader_trait = yes
+	leader_class = { governor }
+	opposites = { "sffaforce_governor_force_grey_1" "sffaforce_governor_force_grey_3" "sffaforce_governor_force_grey_4" "sffaforce_governor_force_grey_5" "sffaforce_governor_force_dark_1" "sffaforce_governor_force_dark_2" "sffaforce_governor_force_dark_3" "sffaforce_governor_force_dark_4" "sffaforce_governor_force_dark_5" "sffaforce_governor_force_light_1" "sffaforce_governor_force_light_2" "sffaforce_governor_force_light_3" "sffaforce_governor_force_light_4" "sffaforce_governor_force_light_5" }
+	initial = no
+}
+
+sffaforce_governor_force_grey_3 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_grey_iii.dds"
+	modifier = {
+		tile_resource_engineering_research_mult = 0.3
+		tile_resource_physics_research_mult = 0.3
+		tile_resource_society_research_mult = 0.3
+	}
+	leader_trait = yes
+	leader_class = { governor }
+	opposites = { "sffaforce_governor_force_grey_2" "sffaforce_governor_force_grey_1" "sffaforce_governor_force_grey_4" "sffaforce_governor_force_grey_5" "sffaforce_governor_force_dark_1" "sffaforce_governor_force_dark_2" "sffaforce_governor_force_dark_3" "sffaforce_governor_force_dark_4" "sffaforce_governor_force_dark_5" "sffaforce_governor_force_light_1" "sffaforce_governor_force_light_2" "sffaforce_governor_force_light_3" "sffaforce_governor_force_light_4" "sffaforce_governor_force_light_5" }
+	initial = no
+}
+
+sffaforce_governor_force_grey_4 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_grey_iv.dds"
+	modifier = {
+		tile_resource_engineering_research_mult = 0.4
+		tile_resource_physics_research_mult = 0.4
+		tile_resource_society_research_mult = 0.4
+	}
+	leader_trait = yes
+	leader_class = { governor }
+	opposites = { "sffaforce_governor_force_grey_2" "sffaforce_governor_force_grey_3" "sffaforce_governor_force_grey_1" "sffaforce_governor_force_grey_5" "sffaforce_governor_force_dark_1" "sffaforce_governor_force_dark_2" "sffaforce_governor_force_dark_3" "sffaforce_governor_force_dark_4" "sffaforce_governor_force_dark_5" "sffaforce_governor_force_light_1" "sffaforce_governor_force_light_2" "sffaforce_governor_force_light_3" "sffaforce_governor_force_light_4" "sffaforce_governor_force_light_5" }
+	initial = no
+}
+
+sffaforce_governor_force_grey_5 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_grey_v.dds"
+	modifier = {
+		tile_resource_engineering_research_mult = 0.5
+		tile_resource_physics_research_mult = 0.5
+		tile_resource_society_research_mult = 0.5
+	}
+	leader_trait = yes
+	leader_class = { governor }
+	opposites = { "sffaforce_governor_force_grey_2" "sffaforce_governor_force_grey_3" "sffaforce_governor_force_grey_4" "sffaforce_governor_force_grey_1" "sffaforce_governor_force_dark_1" "sffaforce_governor_force_dark_2" "sffaforce_governor_force_dark_3" "sffaforce_governor_force_dark_4" "sffaforce_governor_force_dark_5" "sffaforce_governor_force_light_1" "sffaforce_governor_force_light_2" "sffaforce_governor_force_light_3" "sffaforce_governor_force_light_4" "sffaforce_governor_force_light_5" }
+	initial = no
+}
+
+sffaforce_governor_force_dark_1 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_dark_i.dds"
+	modifier = {
+		planet_army_build_speed_mult = 0.1
+		planet_army_build_cost_mult = 0.1
+		building_time_mult = 0.1
+	}
+	leader_trait = yes
+	leader_class = { governor }
+	opposites = { "sffaforce_governor_force_dark_2" "sffaforce_governor_force_dark_3" "sffaforce_governor_force_dark_4" "sffaforce_governor_force_dark_5" "sffaforce_governor_force_grey_1" "sffaforce_governor_force_grey_2" "sffaforce_governor_force_grey_3" "sffaforce_governor_force_grey_4" "sffaforce_governor_force_grey_5" "sffaforce_governor_force_light_1" "sffaforce_governor_force_light_2" "sffaforce_governor_force_light_3" "sffaforce_governor_force_light_4" "sffaforce_governor_force_light_5" }
+	initial = no
+}
+
+sffaforce_governor_force_dark_2 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_dark_ii.dds"
+	modifier = {
+		planet_army_build_speed_mult = 0.2
+		planet_army_build_cost_mult = 0.2
+		building_time_mult = 0.2
+	}
+	leader_trait = yes
+	leader_class = { governor }
+	opposites = { "sffaforce_governor_force_dark_1" "sffaforce_governor_force_dark_3" "sffaforce_governor_force_dark_4" "sffaforce_governor_force_dark_5" "sffaforce_governor_force_grey_1" "sffaforce_governor_force_grey_2" "sffaforce_governor_force_grey_3" "sffaforce_governor_force_grey_4" "sffaforce_governor_force_grey_5" "sffaforce_governor_force_light_1" "sffaforce_governor_force_light_2" "sffaforce_governor_force_light_3" "sffaforce_governor_force_light_4" "sffaforce_governor_force_light_5" }
+	initial = no
+}
+
+sffaforce_governor_force_dark_3 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_dark_iii.dds"
+	modifier = {
+		planet_army_build_speed_mult = 0.3
+		planet_army_build_cost_mult = 0.3
+		building_time_mult = 0.3
+	}
+	leader_trait = yes
+	leader_class = { governor }
+	opposites = { "sffaforce_governor_force_dark_2" "sffaforce_governor_force_dark_1" "sffaforce_governor_force_dark_4" "sffaforce_governor_force_dark_5" "sffaforce_governor_force_grey_1" "sffaforce_governor_force_grey_2" "sffaforce_governor_force_grey_3" "sffaforce_governor_force_grey_4" "sffaforce_governor_force_grey_5" "sffaforce_governor_force_light_1" "sffaforce_governor_force_light_2" "sffaforce_governor_force_light_3" "sffaforce_governor_force_light_4" "sffaforce_governor_force_light_5" }
+	initial = no
+}
+
+sffaforce_governor_force_dark_4 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_dark_iv.dds"
+	modifier = {
+		planet_army_build_speed_mult = 0.4
+		planet_army_build_cost_mult = 0.4
+		building_time_mult = 0.4
+	}
+	leader_trait = yes
+	leader_class = { governor }
+	opposites = { "sffaforce_governor_force_dark_2" "sffaforce_governor_force_dark_3" "sffaforce_governor_force_dark_1" "sffaforce_governor_force_dark_5" "sffaforce_governor_force_grey_1" "sffaforce_governor_force_grey_2" "sffaforce_governor_force_grey_3" "sffaforce_governor_force_grey_4" "sffaforce_governor_force_grey_5" "sffaforce_governor_force_light_1" "sffaforce_governor_force_light_2" "sffaforce_governor_force_light_3" "sffaforce_governor_force_light_4" "sffaforce_governor_force_light_5" }
+	initial = no
+}
+
+sffaforce_governor_force_dark_5 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_dark_v.dds"
+	modifier = {
+		planet_army_build_speed_mult = 0.5
+		planet_army_build_cost_mult = 0.5
+		building_time_mult = 0.5
+	}
+	leader_trait = yes
+	leader_class = { governor }
+	opposites = { "sffaforce_governor_force_dark_2" "sffaforce_governor_force_dark_3" "sffaforce_governor_force_dark_4" "sffaforce_governor_force_dark_1" "sffaforce_governor_force_grey_1" "sffaforce_governor_force_grey_2" "sffaforce_governor_force_grey_3" "sffaforce_governor_force_grey_4" "sffaforce_governor_force_grey_5" "sffaforce_governor_force_light_1" "sffaforce_governor_force_light_2" "sffaforce_governor_force_light_3" "sffaforce_governor_force_light_4" "sffaforce_governor_force_light_5" }
+	initial = no
+}
+
+
+#-----------------------------------------------------------------------------------------------------
+
+#all_technology_research_speed
+#ship_anomaly_research_speed_mult
+#science_ship_survey_speed
+#ship_anomaly_generation_chance_mult
+#ship_anomaly_fail_risk
+
+
+#####################
+# Scientist Traits  #
+#####################
+
+sffaforce_scientist_raw = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_raw.dds"
+	modifier = {
+		all_technology_research_speed = -0.05
+		ship_anomaly_fail_risk = 0.05
+		ship_anomaly_generation_chance_mult = -0.05
+		ship_anomaly_research_speed_mult = -0.05
+		science_ship_survey_speed = -0.05
+	}
+	leader_trait = yes
+	leader_class = { scientist }
+	opposites = { "sffaforce_scientist_force_sensitive_3" "sffaforce_scientist_force_sensitive_4" "sffaforce_scientist_force_sensitive_5" }
+	initial = no
+}
+
+sffaforce_scientist_force_sensitive_1 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_sensitive_i.dds"
+	modifier = {
+		ship_anomaly_fail_risk = -0.10
+		ship_anomaly_generation_chance_mult = 0.10
+		ship_anomaly_research_speed_mult = 0.10
+		science_ship_survey_speed = 0.10
+	}
+	leader_trait = yes
+	leader_class = { scientist }	
+	ai_categories = {
+		survey
+	}
+	opposites = { "sffaforce_scientist_force_sensitive_2" "sffaforce_scientist_force_sensitive_3" "sffaforce_scientist_force_sensitive_4" "sffaforce_scientist_force_sensitive_5" }
+	initial = no
+}
+
+sffaforce_scientist_force_sensitive_2 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_sensitive_ii.dds"
+	modifier = {
+		ship_anomaly_fail_risk = -0.20
+		ship_anomaly_generation_chance_mult = 0.20
+		ship_anomaly_research_speed_mult = 0.20
+		science_ship_survey_speed = 0.20
+	}
+	leader_trait = yes
+	leader_class = { scientist }	
+	ai_categories = {
+		survey
+	}
+	opposites = { "sffaforce_scientist_force_sensitive_1" "sffaforce_scientist_force_sensitive_3" "sffaforce_scientist_force_sensitive_4" "sffaforce_scientist_force_sensitive_5" }
+	initial = no
+}
+
+sffaforce_scientist_force_sensitive_3 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_sensitive_iii.dds"
+	modifier = {
+		ship_anomaly_fail_risk = -0.30
+		ship_anomaly_generation_chance_mult = 0.30
+		ship_anomaly_research_speed_mult = 0.30
+		science_ship_survey_speed = 0.30
+	}
+	leader_trait = yes
+	leader_class = { scientist }	
+	ai_categories = {
+		survey
+	}
+	opposites = { "sffaforce_scientist_force_sensitive_2" "sffaforce_scientist_force_sensitive_1" "sffaforce_scientist_force_sensitive_4" "sffaforce_scientist_force_sensitive_5" }
+	initial = no
+}
+
+sffaforce_scientist_force_sensitive_4 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_sensitive_iv.dds"
+	modifier = {
+		ship_anomaly_fail_risk = -0.40
+		ship_anomaly_generation_chance_mult = 0.40
+		ship_anomaly_research_speed_mult = 0.40
+		science_ship_survey_speed = 0.40
+	}
+	leader_trait = yes
+	leader_class = { scientist }	
+	ai_categories = {
+		survey
+	}
+	opposites = { "sffaforce_scientist_force_sensitive_2" "sffaforce_scientist_force_sensitive_3" "sffaforce_scientist_force_sensitive_1" "sffaforce_scientist_force_sensitive_5" }
+	initial = no
+}
+
+sffaforce_scientist_force_sensitive_5 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_sensitive_v.dds"
+	modifier = {
+		ship_anomaly_fail_risk = -0.50
+		ship_anomaly_generation_chance_mult = 0.50
+		ship_anomaly_research_speed_mult = 0.50
+		science_ship_survey_speed = 0.50
+	}
+	leader_trait = yes
+	leader_class = { scientist }	
+	ai_categories = {
+		survey
+	}
+	opposites = { "sffaforce_scientist_force_sensitive_2" "sffaforce_scientist_force_sensitive_3" "sffaforce_scientist_force_sensitive_4" "sffaforce_scientist_force_sensitive_1" }
+	initial = no
+}
+
+sffaforce_scientist_force_light_1 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_light_i.dds"
+	modifier = {
+		science_ship_survey_speed = 0.10
+		ship_anomaly_generation_chance_mult = 0.1
+	}
+	leader_trait = yes
+	leader_class = { scientist }	
+	ai_categories = {
+		survey
+	}
+	opposites = { "sffaforce_scientist_force_light_2" "sffaforce_scientist_force_light_3" "sffaforce_scientist_force_light_4" "sffaforce_scientist_force_light_5" "sffaforce_scientist_force_grey_1" "sffaforce_scientist_force_grey_2" "sffaforce_scientist_force_grey_3" "sffaforce_scientist_force_grey_4" "sffaforce_scientist_force_grey_5" "sffaforce_scientist_force_dark_1" "sffaforce_scientist_force_dark_2" "sffaforce_scientist_force_dark_3" "sffaforce_scientist_force_dark_4" "sffaforce_scientist_force_dark_5" }
+	initial = no
+}
+
+sffaforce_scientist_force_light_2 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_light_ii.dds"
+	modifier = {
+		science_ship_survey_speed = 0.20
+		ship_anomaly_generation_chance_mult = 0.2
+	}
+	leader_trait = yes
+	leader_class = { scientist }	
+	ai_categories = {
+		survey
+	}
+	opposites = { "sffaforce_scientist_force_light_1" "sffaforce_scientist_force_light_3" "sffaforce_scientist_force_light_4" "sffaforce_scientist_force_light_5" "sffaforce_scientist_force_grey_1" "sffaforce_scientist_force_grey_2" "sffaforce_scientist_force_grey_3" "sffaforce_scientist_force_grey_4" "sffaforce_scientist_force_grey_5" "sffaforce_scientist_force_dark_1" "sffaforce_scientist_force_dark_2" "sffaforce_scientist_force_dark_3" "sffaforce_scientist_force_dark_4" "sffaforce_scientist_force_dark_5" }
+	initial = no
+}
+
+sffaforce_scientist_force_light_3 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_light_iii.dds"
+	modifier = {
+		science_ship_survey_speed = 0.30
+		ship_anomaly_generation_chance_mult = 0.3
+	}
+	leader_trait = yes
+	leader_class = { scientist }	
+	ai_categories = {
+		survey
+	}
+	opposites = { "sffaforce_scientist_force_light_2" "sffaforce_scientist_force_light_1" "sffaforce_scientist_force_light_4" "sffaforce_scientist_force_light_5" "sffaforce_scientist_force_grey_1" "sffaforce_scientist_force_grey_2" "sffaforce_scientist_force_grey_3" "sffaforce_scientist_force_grey_4" "sffaforce_scientist_force_grey_5" "sffaforce_scientist_force_dark_1" "sffaforce_scientist_force_dark_2" "sffaforce_scientist_force_dark_3" "sffaforce_scientist_force_dark_4" "sffaforce_scientist_force_dark_5" }
+	initial = no
+}
+
+sffaforce_scientist_force_light_4 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_light_iv.dds"
+	modifier = {
+		science_ship_survey_speed = 0.40
+		ship_anomaly_generation_chance_mult = 0.4
+	}
+	leader_trait = yes
+	leader_class = { scientist }	
+	ai_categories = {
+		survey
+	}
+	opposites = { "sffaforce_scientist_force_light_2" "sffaforce_scientist_force_light_3" "sffaforce_scientist_force_light_1" "sffaforce_scientist_force_light_5" "sffaforce_scientist_force_grey_1" "sffaforce_scientist_force_grey_2" "sffaforce_scientist_force_grey_3" "sffaforce_scientist_force_grey_4" "sffaforce_scientist_force_grey_5" "sffaforce_scientist_force_dark_1" "sffaforce_scientist_force_dark_2" "sffaforce_scientist_force_dark_3" "sffaforce_scientist_force_dark_4" "sffaforce_scientist_force_dark_5" }
+	initial = no
+}
+
+sffaforce_scientist_force_light_5 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_light_v.dds"
+	modifier = {
+		science_ship_survey_speed = 0.50
+		ship_anomaly_generation_chance_mult = 0.5
+	}
+	leader_trait = yes
+	leader_class = { scientist }	
+	ai_categories = {
+		survey
+	}
+	opposites = { "sffaforce_scientist_force_light_2" "sffaforce_scientist_force_light_3" "sffaforce_scientist_force_light_4" "sffaforce_scientist_force_light_1" "sffaforce_scientist_force_grey_1" "sffaforce_scientist_force_grey_2" "sffaforce_scientist_force_grey_3" "sffaforce_scientist_force_grey_4" "sffaforce_scientist_force_grey_5" "sffaforce_scientist_force_dark_1" "sffaforce_scientist_force_dark_2" "sffaforce_scientist_force_dark_3" "sffaforce_scientist_force_dark_4" "sffaforce_scientist_force_dark_5" }
+	initial = no
+}
+
+sffaforce_scientist_force_grey_1 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_grey_i.dds"
+	modifier = {
+		ship_anomaly_generation_chance_mult = 0.10
+		ship_anomaly_research_speed_mult = 0.10
+	}
+	leader_trait = yes
+	leader_class = { scientist }	
+	ai_categories = {
+		survey
+	}
+	opposites = { "sffaforce_scientist_force_grey_2" "sffaforce_scientist_force_grey_3" "sffaforce_scientist_force_grey_4" "sffaforce_scientist_force_grey_5" "sffaforce_scientist_force_light_1" "sffaforce_scientist_force_light_2" "sffaforce_scientist_force_light_3" "sffaforce_scientist_force_light_4" "sffaforce_scientist_force_light_5" "sffaforce_scientist_force_dark_1" "sffaforce_scientist_force_dark_2" "sffaforce_scientist_force_dark_3" "sffaforce_scientist_force_dark_4" "sffaforce_scientist_force_dark_5" }
+	initial = no
+}
+
+sffaforce_scientist_force_grey_2 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_grey_ii.dds"
+	modifier = {
+		ship_anomaly_generation_chance_mult = 0.20
+		ship_anomaly_research_speed_mult = 0.20
+	}
+	leader_trait = yes
+	leader_class = { scientist }	
+	ai_categories = {
+		survey
+	}
+	opposites = { "sffaforce_scientist_force_grey_1" "sffaforce_scientist_force_grey_3" "sffaforce_scientist_force_grey_4" "sffaforce_scientist_force_grey_5" "sffaforce_scientist_force_light_1" "sffaforce_scientist_force_light_2" "sffaforce_scientist_force_light_3" "sffaforce_scientist_force_light_4" "sffaforce_scientist_force_light_5" "sffaforce_scientist_force_dark_1" "sffaforce_scientist_force_dark_2" "sffaforce_scientist_force_dark_3" "sffaforce_scientist_force_dark_4" "sffaforce_scientist_force_dark_5" }
+	initial = no
+}
+
+sffaforce_scientist_force_grey_3 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_grey_iii.dds"
+	modifier = {
+		ship_anomaly_generation_chance_mult = 0.30
+		ship_anomaly_research_speed_mult = 0.30
+	}
+	leader_trait = yes
+	leader_class = { scientist }	
+	ai_categories = {
+		survey
+	}
+	opposites = { "sffaforce_scientist_force_grey_2" "sffaforce_scientist_force_grey_1" "sffaforce_scientist_force_grey_4" "sffaforce_scientist_force_grey_5" "sffaforce_scientist_force_light_1" "sffaforce_scientist_force_light_2" "sffaforce_scientist_force_light_3" "sffaforce_scientist_force_light_4" "sffaforce_scientist_force_light_5" "sffaforce_scientist_force_dark_1" "sffaforce_scientist_force_dark_2" "sffaforce_scientist_force_dark_3" "sffaforce_scientist_force_dark_4" "sffaforce_scientist_force_dark_5" }
+	initial = no
+}
+
+sffaforce_scientist_force_grey_4 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_grey_iv.dds"
+	modifier = {
+		ship_anomaly_generation_chance_mult = 0.40
+		ship_anomaly_research_speed_mult = 0.40
+	}
+	leader_trait = yes
+	leader_class = { scientist }	
+	ai_categories = {
+		survey
+	}
+	opposites = { "sffaforce_scientist_force_grey_2" "sffaforce_scientist_force_grey_3" "sffaforce_scientist_force_grey_1" "sffaforce_scientist_force_grey_5" "sffaforce_scientist_force_light_1" "sffaforce_scientist_force_light_2" "sffaforce_scientist_force_light_3" "sffaforce_scientist_force_light_4" "sffaforce_scientist_force_light_5" "sffaforce_scientist_force_dark_1" "sffaforce_scientist_force_dark_2" "sffaforce_scientist_force_dark_3" "sffaforce_scientist_force_dark_4" "sffaforce_scientist_force_dark_5" }
+	initial = no
+}
+
+sffaforce_scientist_force_grey_5 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_grey_v.dds"
+	modifier = {
+		ship_anomaly_generation_chance_mult = 0.50
+		ship_anomaly_research_speed_mult = 0.50
+	}
+	leader_trait = yes
+	leader_class = { scientist }	
+	ai_categories = {
+		survey
+	}
+	opposites = { "sffaforce_scientist_force_grey_2" "sffaforce_scientist_force_grey_3" "sffaforce_scientist_force_grey_4" "sffaforce_scientist_force_grey_1" "sffaforce_scientist_force_light_1" "sffaforce_scientist_force_light_2" "sffaforce_scientist_force_light_3" "sffaforce_scientist_force_light_4" "sffaforce_scientist_force_light_5" "sffaforce_scientist_force_dark_1" "sffaforce_scientist_force_dark_2" "sffaforce_scientist_force_dark_3" "sffaforce_scientist_force_dark_4" "sffaforce_scientist_force_dark_5" }
+	initial = no
+}
+
+sffaforce_scientist_force_dark_1 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_dark_i.dds"
+	modifier = {
+		ship_anomaly_fail_risk = -0.10
+	}
+	leader_trait = yes
+	leader_class = { scientist }	
+	ai_categories = {
+		survey
+	}
+	opposites = { "sffaforce_scientist_force_dark_2" "sffaforce_scientist_force_dark_3" "sffaforce_scientist_force_dark_4" "sffaforce_scientist_force_dark_5" "sffaforce_scientist_force_grey_1" "sffaforce_scientist_force_grey_2" "sffaforce_scientist_force_grey_3" "sffaforce_scientist_force_grey_4" "sffaforce_scientist_force_grey_5" "sffaforce_scientist_force_light_1" "sffaforce_scientist_force_light_2" "sffaforce_scientist_force_light_3" "sffaforce_scientist_force_light_4" "sffaforce_scientist_force_light_5" }
+	initial = no
+}
+
+sffaforce_scientist_force_dark_2 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_dark_ii.dds"
+	modifier = {
+		ship_anomaly_fail_risk = -0.20
+	}
+	leader_trait = yes
+	leader_class = { scientist }	
+	ai_categories = {
+		survey
+	}
+	opposites = { "sffaforce_scientist_force_dark_1" "sffaforce_scientist_force_dark_3" "sffaforce_scientist_force_dark_4" "sffaforce_scientist_force_dark_5" "sffaforce_scientist_force_grey_1" "sffaforce_scientist_force_grey_2" "sffaforce_scientist_force_grey_3" "sffaforce_scientist_force_grey_4" "sffaforce_scientist_force_grey_5" "sffaforce_scientist_force_light_1" "sffaforce_scientist_force_light_2" "sffaforce_scientist_force_light_3" "sffaforce_scientist_force_light_4" "sffaforce_scientist_force_light_5" }
+	initial = no
+}
+
+sffaforce_scientist_force_dark_3 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_dark_iii.dds"
+	modifier = {
+		ship_anomaly_fail_risk = -0.30
+	}
+	leader_trait = yes
+	leader_class = { scientist }	
+	ai_categories = {
+		survey
+	}
+	opposites = { "sffaforce_scientist_force_dark_2" "sffaforce_scientist_force_dark_1" "sffaforce_scientist_force_dark_4" "sffaforce_scientist_force_dark_5" "sffaforce_scientist_force_grey_1" "sffaforce_scientist_force_grey_2" "sffaforce_scientist_force_grey_3" "sffaforce_scientist_force_grey_4" "sffaforce_scientist_force_grey_5" "sffaforce_scientist_force_light_1" "sffaforce_scientist_force_light_2" "sffaforce_scientist_force_light_3" "sffaforce_scientist_force_light_4" "sffaforce_scientist_force_light_5" }
+	initial = no
+}
+
+sffaforce_scientist_force_dark_4 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_dark_iv.dds"
+	modifier = {
+		ship_anomaly_fail_risk = -0.40
+	}
+	leader_trait = yes
+	leader_class = { scientist }	
+	ai_categories = {
+		survey
+	}
+	opposites = { "sffaforce_scientist_force_dark_2" "sffaforce_scientist_force_dark_3" "sffaforce_scientist_force_dark_1" "sffaforce_scientist_force_dark_5" "sffaforce_scientist_force_grey_1" "sffaforce_scientist_force_grey_2" "sffaforce_scientist_force_grey_3" "sffaforce_scientist_force_grey_4" "sffaforce_scientist_force_grey_5" "sffaforce_scientist_force_light_1" "sffaforce_scientist_force_light_2" "sffaforce_scientist_force_light_3" "sffaforce_scientist_force_light_4" "sffaforce_scientist_force_light_5" }
+	initial = no
+}
+
+sffaforce_scientist_force_dark_5 = {
+	cost = 1
+	modification = no
+	icon = "gfx/trait_sffa_force_dark_v.dds"
+	modifier = {
+		ship_anomaly_fail_risk = -0.50
+	}
+	leader_trait = yes
+	leader_class = { scientist }	
+	ai_categories = {
+		survey
+	}
+	opposites = { "sffaforce_scientist_force_dark_2" "sffaforce_scientist_force_dark_3" "sffaforce_scientist_force_dark_4" "sffaforce_scientist_force_dark_1" "sffaforce_scientist_force_grey_1" "sffaforce_scientist_force_grey_2" "sffaforce_scientist_force_grey_3" "sffaforce_scientist_force_grey_4" "sffaforce_scientist_force_grey_5" "sffaforce_scientist_force_light_1" "sffaforce_scientist_force_light_2" "sffaforce_scientist_force_light_3" "sffaforce_scientist_force_light_4" "sffaforce_scientist_force_light_5" }
+	initial = no
+}
+
+
+
+#-----------------------------------------------------------------------------------------------------
+
+
+
+
+#sffaforce_ruler_force_sensitive_1 = {
+#	cost = 1
+#	modification = no
+#	icon = "gfx/trait_sffa_force_sensitive_i.dds"
+#	modifier = {
+#		ship_emergency_ftl_mult = 0.05
+#		ship_evasion_mult = 0.05
+#		ship_speed_mult = 0.05
+#		ship_fire_rate_mult = 0.05
+#	}
+#	leader_trait = yes
+#	leader_class = { ruler }
+#	opposites = { "sffaforce_ruler_force_sensitive_2" "sffaforce_ruler_force_sensitive_3" "sffaforce_ruler_force_sensitive_4" "sffaforce_ruler_force_sensitive_5" }
+#	initial = no
+#}
+#
+#sffaforce_ruler_force_sensitive_2 = {
+#	cost = 1
+#	modification = no
+#	icon = "gfx/trait_sffa_force_sensitive_ii.dds"
+#	modifier = {
+#		ship_emergency_ftl_mult = 0.05
+#		ship_evasion_mult = 0.05
+#		ship_speed_mult = 0.05
+#		ship_fire_rate_mult = 0.05
+#	}
+#	leader_trait = yes
+#	leader_class = { ruler }
+#	opposites = { "sffaforce_ruler_force_sensitive_2" "sffaforce_ruler_force_sensitive_3" "sffaforce_ruler_force_sensitive_4" "sffaforce_ruler_force_sensitive_5" }
+#	initial = no
+#}
+
+#sffaforce_ruler_force_sensitive_3 = {
+#	cost = 1
+#	modification = no
+#	icon = "gfx/trait_sffa_force_sensitive_iii.dds"
+#	modifier = {
+#		ship_emergency_ftl_mult = 0.05
+#		ship_evasion_mult = 0.05
+#		ship_speed_mult = 0.05
+#		ship_fire_rate_mult = 0.05
+#	}
+#	leader_trait = yes
+#	leader_class = { ruler }
+#	opposites = { "sffaforce_ruler_force_sensitive_2" "sffaforce_ruler_force_sensitive_3" "sffaforce_ruler_force_sensitive_4" "sffaforce_ruler_force_sensitive_5" }
+#	initial = no
+#}
+#
+#sffaforce_ruler_force_sensitive_4 = {
+#	cost = 1
+#	modification = no
+#	icon = "gfx/trait_sffa_force_sensitive_iv.dds"
+#	modifier = {
+#		ship_emergency_ftl_mult = 0.05
+#		ship_evasion_mult = 0.05
+#		ship_speed_mult = 0.05
+#		ship_fire_rate_mult = 0.05
+#	}
+#	leader_trait = yes
+#	leader_class = { ruler }
+#	opposites = { "sffaforce_ruler_force_sensitive_2" "sffaforce_ruler_force_sensitive_3" "sffaforce_ruler_force_sensitive_4" "sffaforce_ruler_force_sensitive_5" }
+#	initial = no
+#}
+#
+#sffaforce_ruler_force_sensitive_5 = {
+#	cost = 1
+#	modification = no
+#	icon = "gfx/trait_sffa_force_sensitive_v.dds"
+#	modifier = {
+#		ship_emergency_ftl_mult = 0.05
+#		ship_evasion_mult = 0.05
+#		ship_speed_mult = 0.05
+#		ship_fire_rate_mult = 0.05
+#	}
+#	leader_trait = yes
+#	leader_class = { ruler }
+#	opposites = { "sffaforce_ruler_force_sensitive_2" "sffaforce_ruler_force_sensitive_3" "sffaforce_ruler_force_sensitive_4" "sffaforce_ruler_force_sensitive_5" }
+#	initial = no
+#}

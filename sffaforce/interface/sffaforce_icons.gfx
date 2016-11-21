@@ -1,0 +1,110 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "force_sensitive_v"
+		textureFile = "gfx/trait_sffa_force_sensitive_v.dds"
+	}
+
+	spriteType = {
+		name = "force_sensitive_iv"
+		textureFile = "gfx/trait_sffa_force_sensitive_iv.dds"	
+		}
+
+	spriteType = {
+		name = "force_sensitive_iii"
+		textureFile = "gfx/trait_sffa_force_sensitive_iii.dds"	
+	}
+
+	spriteType = {
+		name = "force_sensitive_ii"
+		textureFile = "gfx/trait_sffa_force_sensitive_ii.dds"	
+	}
+
+	spriteType = {
+		name = "force_sensitive_i"
+		textureFile = "gfx/trait_sffa_force_sensitive_i.dds"	
+	}
+
+	spriteType = {
+		name = "force_light_v"
+		textureFile = "gfx/trait_sffa_force_light_v.dds"
+	}
+
+	spriteType = {
+		name = "force_light_iv"
+		textureFile = "gfx/trait_sffa_force_light_iv.dds"	
+		}
+
+	spriteType = {
+		name = "force_light_iii"
+		textureFile = "gfx/trait_sffa_force_light_iii.dds"	
+	}
+
+	spriteType = {
+		name = "force_light_ii"
+		textureFile = "gfx/trait_sffa_force_light_ii.dds"	
+	}
+
+	spriteType = {
+		name = "force_light_i"
+		textureFile = "gfx/trait_sffa_force_light_i.dds"	
+	}
+	
+	spriteType = {
+		name = "force_grey_v"
+		textureFile = "gfx/trait_sffa_force_grey_v.dds"
+	}
+
+	spriteType = {
+		name = "force_grey_iv"
+		textureFile = "gfx/trait_sffa_force_grey_iv.dds"	
+		}
+
+	spriteType = {
+		name = "force_grey_iii"
+		textureFile = "gfx/trait_sffa_force_grey_iii.dds"	
+	}
+
+	spriteType = {
+		name = "force_grey_ii"
+		textureFile = "gfx/trait_sffa_force_grey_ii.dds"	
+	}
+
+	spriteType = {
+		name = "force_grey_i"
+		textureFile = "gfx/trait_sffa_force_grey_i.dds"	
+	}
+	
+	spriteType = {
+		name = "force_dark_v"
+		textureFile = "gfx/trait_sffa_force_dark_v.dds"
+	}
+
+	spriteType = {
+		name = "force_dark_iv"
+		textureFile = "gfx/trait_sffa_force_dark_iv.dds"	
+		}
+
+	spriteType = {
+		name = "force_dark_iii"
+		textureFile = "gfx/trait_sffa_force_dark_iii.dds"	
+	}
+
+	spriteType = {
+		name = "force_dark_ii"
+		textureFile = "gfx/trait_sffa_force_dark_ii.dds"	
+	}
+
+	spriteType = {
+		name = "force_dark_i"
+		textureFile = "gfx/trait_sffa_force_dark_i.dds"	
+	}
+	spriteType = {
+		name = "GFX_evt_force_leader"
+		textureFile = "gfx/force_leader.dds"	
+	}
+	spriteType = {
+		name = "raw_recruit"
+		textureFile = "gfx/trait_sffa_force_raw.dds"	
+	}
+}

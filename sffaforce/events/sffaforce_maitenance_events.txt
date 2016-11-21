@@ -1,0 +1,359 @@
+
+namespace = sffaforce
+
+##these events will eventually be just spawning a FS, while other events are 
+##their 'appearence'. ie. there will be the space battle and the leader will 
+##be 'sent to training' and will then spawn later with one of these (firing
+##from the other event and using 'mean_time_to_happen'
+
+#1: Admiral
+#2: General
+#3: Scientist
+#4: Governor
+
+#Admiral Spawned from space battle
+event = {
+	id = sffaforce.1
+	hide_window = yes
+	is_triggered_only = yes
+				
+	immediate = {
+		if = {
+			limit = {
+				this = {
+					NOT = {
+						has_technology = tech_sffaforce_force_analysis
+						has_technology = tech_sffaforce_force_studies
+						has_technology = tech_sffaforce_force_divergence
+						}
+					}
+				}
+			random_list = {
+				95 = { }
+				5 = {
+					this = { country_event = { Id = sffaforce.10 } }
+						}
+				}
+			}
+		if = {
+			limit = {
+				this = { 
+					has_technology = tech_sffaforce_force_analysis
+					NOT = {
+						has_technology = tech_sffaforce_force_studies
+						has_technology = tech_sffaforce_force_divergence
+						}
+					}
+				}
+			random_list = {
+				88 = { }
+				12 = {
+					event = sffaforce.10
+					}
+				}
+			}
+		if = {
+			limit = {
+				this = { 
+					has_technology = tech_sffaforce_force_analysis
+					has_technology = tech_sffaforce_force_studies
+					NOT = {
+						has_technology = tech_sffaforce_force_divergence
+						}
+					}
+				}
+			random_list = {
+				80 = { }
+				10 = {
+					event = sffaforce.10
+					}
+				}
+			}
+		if = {
+			limit = {
+				this = { 
+					has_technology = tech_sffaforce_force_analysis
+					has_technology = tech_sffaforce_force_studies
+					has_technology = tech_sffaforce_force_divergence
+					}
+				}
+			random_list = {
+				70 = { }
+				30 = {
+					event = sffaforce.10
+					}
+				}
+			}		
+		}
+}
+
+#General spawn
+event = {
+	id = sffaforce.2
+	hide_window = yes
+	is_triggered_only = yes
+				
+	immediate = {
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						has_technology = tech_sffaforce_force_analysis
+						has_technology = tech_sffaforce_force_studies
+						has_technology = tech_sffaforce_force_divergence
+						}
+					}
+				}
+			random_list = {
+				95 = { }
+				5 = {
+					owner = { country_event = { Id = sffaforce.11 } }
+						}
+				}
+			}
+		if = {
+			limit = {
+				owner = { 
+					has_technology = tech_sffaforce_force_analysis
+					NOT = {
+						has_technology = tech_sffaforce_force_studies
+						has_technology = tech_sffaforce_force_divergence
+						}
+					}
+				}
+			random_list = {
+				88 = { }
+				12 = {
+					event = sffaforce.11
+					}
+				}
+			}
+		if = {
+			limit = {
+				owner = { 
+					has_technology = tech_sffaforce_force_analysis
+					has_technology = tech_sffaforce_force_studies
+					NOT = {
+						has_technology = tech_sffaforce_force_divergence
+						}
+					}
+				}
+			random_list = {
+				80 = { }
+				11 = {
+					event = sffaforce.11
+					}
+				}
+			}
+		if = {
+			limit = {
+				owner = { 
+					has_technology = tech_sffaforce_force_analysis
+					has_technology = tech_sffaforce_force_studies
+					has_technology = tech_sffaforce_force_divergence
+					}
+				}
+			random_list = {
+				70 = { }
+				30 = {
+					event = sffaforce.11
+					}
+				}
+			}		
+		}
+}
+
+#Scientist Spawn on survey
+event = {
+	id = sffaforce.3
+	hide_window = yes
+	
+	is_triggered_only = yes
+				
+	immediate = {
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						has_technology = tech_sffaforce_force_analysis
+						has_technology = tech_sffaforce_force_studies
+						has_technology = tech_sffaforce_force_divergence
+						}
+					}
+				}
+			random_list = {
+				95 = { }
+				5 = {
+					owner = { country_event = { Id = sffaforce.12 } }
+						}
+				}
+			}
+		if = {
+			limit = {
+				owner = { 
+					has_technology = tech_sffaforce_force_analysis
+					NOT = {
+						has_technology = tech_sffaforce_force_studies
+						has_technology = tech_sffaforce_force_divergence
+						}
+					}
+				}
+			random_list = {
+				88 = { }
+				12 = {
+					event = sffaforce.12
+					}
+				}
+			}
+		if = {
+			limit = {
+				owner = { 
+					has_technology = tech_sffaforce_force_analysis
+					has_technology = tech_sffaforce_force_studies
+					NOT = {
+						has_technology = tech_sffaforce_force_divergence
+						}
+					}
+				}
+			random_list = {
+				80 = { }
+				12 = {
+					event = sffaforce.12
+					}
+				}
+			}
+		if = {
+			limit = {
+				owner = { 
+					has_technology = tech_sffaforce_force_analysis
+					has_technology = tech_sffaforce_force_studies
+					has_technology = tech_sffaforce_force_divergence
+					}
+				}
+			random_list = {
+				70 = { }
+				30 = {
+					event = sffaforce.12
+					}
+				}
+			}		
+		}
+}
+
+#Governor Spawn on Clearing Blocker
+event = {
+	id = sffaforce.4
+	hide_window = yes
+	is_triggered_only = yes
+				
+	immediate = {
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						has_technology = tech_sffaforce_force_analysis
+						has_technology = tech_sffaforce_force_studies
+						has_technology = tech_sffaforce_force_divergence
+						}
+					}
+				}
+			random_list = {
+				95 = { }
+				5 = {
+					owner = { country_event = { Id = sffaforce.13 } }
+						}
+				}
+			}
+		if = {
+			limit = {
+				owner = { 
+					has_technology = tech_sffaforce_force_analysis
+					NOT = {
+						has_technology = tech_sffaforce_force_studies
+						has_technology = tech_sffaforce_force_divergence
+						}
+					}
+				}
+			random_list = {
+				88 = { }
+				12 = {
+					event = sffaforce.13
+					}
+				}
+			}
+		if = {
+			limit = {
+				owner = { 
+					has_technology = tech_sffaforce_force_analysis
+					has_technology = tech_sffaforce_force_studies
+					NOT = {
+						has_technology = tech_sffaforce_force_divergence
+						}
+					}
+				}
+			random_list = {
+				80 = { }
+				13 = {
+					event = sffaforce.13
+					}
+				}
+			}
+		if = {
+			limit = {
+				owner = { 
+					has_technology = tech_sffaforce_force_analysis
+					has_technology = tech_sffaforce_force_studies
+					has_technology = tech_sffaforce_force_divergence
+					}
+				}
+			random_list = {
+				70 = { }
+				30 = {
+					event = sffaforce.13
+					}
+				}
+			}		
+		}
+}
+
+#Force-Sensitive scientist
+country_event = {
+	id = sffaforce.997
+	title = "sffaforce.997.name"
+	desc = "sffaforce.997.desc"
+	picture = GFX_evt_federation_fleet
+	location = ROOT
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = GOOD
+	}
+}
+
+# Force-Sensitive scientist
+country_event = {
+	id = sffaforce.998
+	title = "sffaforce.998.name"
+	desc = "sffaforce.998.desc"
+	picture = GFX_evt_federation_fleet
+	location = ROOT
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = GOOD
+	}
+}
+
+country_event = { 
+	id = sffaforce.999
+	hide_window = yes
+	title = "sffaforce.999.name"
+	desc = "sffaforce.999.desc"
+	picture = GFX_evt_federation_fleet
+	
+	is_triggered_only = yes
+		
+}
+

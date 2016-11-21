@@ -1,0 +1,569 @@
+
+namespace = sffaforce
+
+#New Admiral from space battle (pre-studies), need to add differing descriptions based on tech level (check the gamestarts)
+event = { #spawning a pre-studies force-sensitive leader
+	id = sffaforce.10
+	title = "sffaforce.10.name"
+	desc = {
+		text = sffaforce.10.desc_01
+		trigger = {
+			NOT = { owner = { has_technology = tech_sffaforce_force_analysis } }
+			}
+		}
+	desc = {
+		text = sffaforce.10.desc_02
+		trigger = {
+			owner = { has_technology = tech_sffaforce_force_analysis }
+			NOT = { owner = { has_technology = tech_sffaforce_force_studies } }
+			}
+		}
+	desc = {
+		text = sffaforce.10.desc_03
+		trigger = {
+			owner = { has_technology = tech_sffaforce_force_studies }
+			}
+		}	
+	picture = GFX_evt_force_leader
+	
+	is_triggered_only = yes
+		
+	immediate = {
+	if = {
+		limit = {
+			not = {
+				has_technology = tech_sffaforce_force_analysis
+				}
+			}
+		create_leader = {
+			type = admiral
+			species = owner_main_species
+			name = random
+			skill = 200
+			traits = {
+				trait = sffaforce_admiral_force_sensitive_1
+				trait = sffaforce_admiral_raw
+				}
+			}
+		}
+	if =  {
+		limit = {
+			AND = {
+				has_technology = tech_sffaforce_force_analysis
+				}
+			not = {
+				has_technology = tech_sffaforce_force_studies
+				has_technology = tech_sffaforce_force_divergence
+				}
+			}
+		create_leader = {
+			type = admiral
+			species = owner_main_species
+			name = random
+			skill = 200
+			traits = {
+				trait = sffaforce_admiral_force_sensitive_1
+				trait = sffaforce_admiral_raw
+				}
+			}
+		}
+	if =  {
+		limit = {
+			AND = {
+				has_technology = tech_sffaforce_force_analysis
+				has_technology = tech_sffaforce_force_studies
+				}
+			not = {
+				has_technology = tech_sffaforce_force_divergence
+				}
+			}
+		create_leader = {
+			type = admiral
+			species = owner_main_species
+			name = random
+			skill = 200
+			traits = {
+				trait = sffaforce_admiral_force_sensitive_1
+				}
+			}
+		}
+	if = {
+		limit = {
+			AND = {
+				has_technology = tech_sffaforce_force_analysis
+				has_technology = tech_sffaforce_force_studies
+				has_technology = tech_sffaforce_force_divergence
+				}
+			}
+		create_leader = {
+			type = admiral
+			species = owner_main_species
+			name = random
+			skill = 200
+			traits = {
+				trait = sffaforce_admiral_force_sensitive_1
+				}
+			}
+		}
+	
+	random_list = { #will be moved to a new event, fired later and supposed to represent training, and here will have last_created_leader = { save_event_target_as = forcce_leader }
+		33 = { 
+			modifier = {
+				factor = 0.6
+				has_policy_flag = sffaforce_discriminated_light_force
+				}
+			modifier = {
+				factor = 0.0
+				has_policy_flag = sffaforce_purge_light_force
+				}
+			
+			last_created_leader = { add_trait = sffaforce_admiral_force_light_1 } 
+		}
+		33 = {
+			modifier = {
+				factor = 0.6
+				has_policy_flag = sffaforce_discriminated_grey_force
+				}
+			modifier = {
+				factor = 0.0
+				has_policy_flag = sffaforce_purge_grey_force
+				}
+		
+		last_created_leader = { add_trait = sffaforce_admiral_force_grey_1 } 
+		}
+		33 = {
+			modifier = {
+				factor = 0.6
+				has_policy_flag = sffaforce_discriminated_dark_force
+				}
+			modifier = {
+				factor = 0.0
+				has_policy_flag = sffaforce_purge_dark_force
+				}
+			
+		last_created_leader = { add_trait = sffaforce_admiral_force_dark_1 } 
+			}
+		}
+	}
+		option = {
+		name = GOOD
+	}
+}
+
+#New General from ground combat, need to add differing descriptions based on tech level
+country_event = { #yearly spawning a post-analysis force-sensitive leader
+	id = sffaforce.11
+	title = "sffaforce.11.name"
+	desc = {
+		text = sffaforce.11.desc_01
+		trigger = {
+			NOT = { owner = { has_technology = tech_sffaforce_force_analysis } }
+			}
+		}
+	desc = {
+		text = sffaforce.11.desc_02
+		trigger = {
+			owner = { has_technology = tech_sffaforce_force_analysis }
+			NOT = { owner = { has_technology = tech_sffaforce_force_studies } }
+			}
+		}
+	desc = {
+		text = sffaforce.11.desc_03
+		trigger = {
+			owner = { has_technology = tech_sffaforce_force_studies }
+			}
+		}	
+	picture = GFX_evt_force_leader
+	
+	is_triggered_only = yes
+		
+	immediate = {
+	if = {
+		limit = {
+			not = {
+				has_technology = tech_sffaforce_force_analysis
+				}
+			}
+		create_leader = {
+			type = general
+			species = owner_main_species
+			name = random
+			skill = 200
+			traits = {
+				trait = sffaforce_general_force_sensitive_1
+				trait = sffaforce_general_raw
+				}
+			}
+		}
+	if =  {
+		limit = {
+			AND = {
+				has_technology = tech_sffaforce_force_analysis
+				}
+			not = {
+				has_technology = tech_sffaforce_force_studies
+				has_technology = tech_sffaforce_force_divergence
+				}
+			}
+		create_leader = {
+			type = general
+			species = owner_main_species
+			name = random
+			skill = 200
+			traits = {
+				trait = sffaforce_general_force_sensitive_1
+				trait = sffaforce_general_raw
+				}
+			}
+		}
+	if =  {
+		limit = {
+			AND = {
+				has_technology = tech_sffaforce_force_analysis
+				has_technology = tech_sffaforce_force_studies
+				}
+			not = {
+				has_technology = tech_sffaforce_force_divergence
+				}
+			}
+		create_leader = {
+			type = general
+			species = owner_main_species
+			name = random
+			skill = 200
+			traits = {
+				trait = sffaforce_general_force_sensitive_1
+				}
+			}
+		}
+	if = {
+		limit = {
+			AND = {
+				has_technology = tech_sffaforce_force_analysis
+				has_technology = tech_sffaforce_force_studies
+				has_technology = tech_sffaforce_force_divergence
+				}
+			}
+		create_leader = {
+			type = general
+			species = owner_main_species
+			name = random
+			skill = 200
+			traits = {
+				trait = sffaforce_general_force_sensitive_1
+				}
+			}
+		}
+	
+	random_list = { #will be moved to a new event, fired later and supposed to represent training
+		33 = { 
+			modifier = {
+				factor = 0.6
+				has_policy_flag = sffaforce_discriminated_light_force
+				}
+			modifier = {
+				factor = 0.0
+				has_policy_flag = sffaforce_purge_light_force
+				}
+			
+			last_created_leader = { add_trait = sffaforce_general_force_light_1 } 
+		}
+		33 = {
+			modifier = {
+				factor = 0.6
+				has_policy_flag = sffaforce_discriminated_grey_force
+				}
+			modifier = {
+				factor = 0.0
+				has_policy_flag = sffaforce_purge_grey_force
+				}
+		
+		last_created_leader = { add_trait = sffaforce_general_force_grey_1 } 
+		}
+		33 = {
+			modifier = {
+				factor = 0.6
+				has_policy_flag = sffaforce_discriminated_dark_force
+				}
+			modifier = {
+				factor = 0.0
+				has_policy_flag = sffaforce_purge_dark_force
+				}
+			
+		last_created_leader = { add_trait = sffaforce_general_force_dark_1 } 
+			}
+		}
+	}
+		option = {
+		name = GOOD
+	}
+}
+
+#spawning scientist on new researching new things (unique assistant)
+country_event = { #yearly spawning a post-studies force-sensitive leader
+	id = sffaforce.12
+	title = "sffaforce.12.name"
+	desc = "sffaforce.12.desc"
+	picture = GFX_evt_force_leader
+	
+	is_triggered_only = yes
+		
+	immediate = {
+	if = {
+		limit = {
+			not = {
+				has_technology = tech_sffaforce_force_analysis
+				}
+			}
+		create_leader = {
+			type = scientist
+			species = owner_main_species
+			name = random
+			skill = 200
+			traits = {
+				trait = sffaforce_scientist_force_sensitive_1
+				trait = sffaforce_scientist_raw
+				}
+			}
+		}
+	if =  {
+		limit = {
+			AND = {
+				has_technology = tech_sffaforce_force_analysis
+				}
+			not = {
+				has_technology = tech_sffaforce_force_studies
+				has_technology = tech_sffaforce_force_divergence
+				}
+			}
+		create_leader = {
+			type = scientist
+			species = owner_main_species
+			name = random
+			skill = 200
+			traits = {
+				trait = sffaforce_scientist_force_sensitive_1
+				trait = sffaforce_scientist_raw
+				}
+			}
+		}
+	if =  {
+		limit = {
+			AND = {
+				has_technology = tech_sffaforce_force_analysis
+				has_technology = tech_sffaforce_force_studies
+				}
+			not = {
+				has_technology = tech_sffaforce_force_divergence
+				}
+			}
+		create_leader = {
+			type = scientist
+			species = owner_main_species
+			name = random
+			skill = 200
+			traits = {
+				trait = sffaforce_scientist_force_sensitive_1
+				}
+			}
+		}
+	if = {
+		limit = {
+			AND = {
+				has_technology = tech_sffaforce_force_analysis
+				has_technology = tech_sffaforce_force_studies
+				has_technology = tech_sffaforce_force_divergence
+				}
+			}
+		create_leader = {
+			type = scientist
+			species = owner_main_species
+			name = random
+			skill = 200
+			traits = {
+				trait = sffaforce_scientist_force_sensitive_1
+				}
+			}
+		}
+	
+	random_list = { #will be moved to a new event, fired later and supposed to represent training
+		33 = { 
+			modifier = {
+				factor = 0.6
+				has_policy_flag = sffaforce_discriminated_light_force
+				}
+			modifier = {
+				factor = 0.0
+				has_policy_flag = sffaforce_purge_light_force
+				}
+			
+			last_created_leader = { add_trait = sffaforce_scientist_force_light_1 } 
+		}
+		33 = {
+			modifier = {
+				factor = 0.6
+				has_policy_flag = sffaforce_discriminated_grey_force
+				}
+			modifier = {
+				factor = 0.0
+				has_policy_flag = sffaforce_purge_grey_force
+				}
+		
+		last_created_leader = { add_trait = sffaforce_scientist_force_grey_1 } 
+		}
+		33 = {
+			modifier = {
+				factor = 0.6
+				has_policy_flag = sffaforce_discriminated_dark_force
+				}
+			modifier = {
+				factor = 0.0
+				has_policy_flag = sffaforce_purge_dark_force
+				}
+			
+		last_created_leader = { add_trait = sffaforce_scientist_force_dark_1 } 
+			}
+		}
+		}
+		option = {
+		name = GOOD
+	}
+}
+
+#spawning Governor on clearing a blocker
+country_event = {
+	id = sffaforce.13
+	title = "sffaforce.13.name"
+	desc = "sffaforce.13.desc"
+	picture = GFX_evt_force_leader
+	
+	is_triggered_only = yes
+		
+	immediate = {
+	
+	if = {
+		limit = {
+			not = {
+				has_technology = tech_sffaforce_force_analysis
+				}
+			}
+		create_leader = {
+			type = governor
+			species = owner_main_species
+			name = random
+			skill = 200
+			traits = {
+				trait = sffaforce_governor_force_sensitive_1
+				trait = sffaforce_governor_raw
+				}
+			}
+		}
+	if =  {
+		limit = {
+			AND = {
+				has_technology = tech_sffaforce_force_analysis
+				}
+			not = {
+				has_technology = tech_sffaforce_force_studies
+				has_technology = tech_sffaforce_force_divergence
+				}
+			}
+		create_leader = {
+			type = governor
+			species = owner_main_species
+			name = random
+			skill = 200
+			traits = {
+				trait = sffaforce_governor_force_sensitive_1
+				trait = sffaforce_governor_raw
+				}
+			}
+		}
+	if =  {
+		limit = {
+			AND = {
+				has_technology = tech_sffaforce_force_analysis
+				has_technology = tech_sffaforce_force_studies
+				}
+			not = {
+				has_technology = tech_sffaforce_force_divergence
+				}
+			}
+		create_leader = {
+			type = governor
+			species = owner_main_species
+			name = random
+			skill = 200
+			traits = {
+				trait = sffaforce_governor_force_sensitive_1
+				}
+			}
+		}
+	if = {
+		limit = {
+			AND = {
+				has_technology = tech_sffaforce_force_analysis
+				has_technology = tech_sffaforce_force_studies
+				has_technology = tech_sffaforce_force_divergence
+				}
+			}
+		create_leader = {
+			type = governor
+			species = owner_main_species
+			name = random
+			skill = 200
+			traits = {
+				trait = sffaforce_governor_force_sensitive_1
+				}
+			}
+		}
+	
+	random_list = { #will be moved to a new event, fired later and supposed to represent training
+		33 = { 
+			modifier = {
+				factor = 0.6
+				has_policy_flag = sffaforce_discriminated_light_force
+				}
+			modifier = {
+				factor = 0.0
+				has_policy_flag = sffaforce_purge_light_force
+				}
+			
+			last_created_leader = { add_trait = sffaforce_governor_force_light_1 } 
+		}
+		33 = {
+			modifier = {
+				factor = 0.6
+				has_policy_flag = sffaforce_discriminated_grey_force
+				}
+			modifier = {
+				factor = 0.0
+				has_policy_flag = sffaforce_purge_grey_force
+				}
+		
+		last_created_leader = { add_trait = sffaforce_governor_force_grey_1 } 
+		}
+		33 = {
+			modifier = {
+				factor = 0.6
+				has_policy_flag = sffaforce_discriminated_dark_force
+				}
+			modifier = {
+				factor = 0.0
+				has_policy_flag = sffaforce_purge_dark_force
+				}
+			
+		last_created_leader = { add_trait = sffaforce_governor_force_dark_1 } 
+			}
+		}
+		}
+		option = {
+		name = GOOD
+	}
+}
+
+
+#on_survey events (Ruins discovered)
+
+#on_blocker_cleared (Ruins discovered)
+

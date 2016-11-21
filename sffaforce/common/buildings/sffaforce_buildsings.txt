@@ -1,0 +1,129 @@
+# Sith Ruins
+sffaforce_building_sith_ruins = {
+
+	is_listed = no
+	
+	cost = {
+	}
+
+	required_resources = {
+	}
+	
+	produced_resources = {
+		society_research = 6
+	}
+	
+	upgrades = {
+		sffaforce_building_sith_temple
+	}
+	
+	ai_replace = no
+}
+
+# Sith Restored Ruins
+sffaforce_building_sith_temple = {
+	is_listed = no
+
+	icon = "sffaforce_building_sith_ruins"
+	
+	cost = {
+	}
+
+	required_resources = {
+	}
+	
+	produced_resources = {
+		society_research = 12
+	}
+	
+	upgrades = {
+	}
+	
+	ai_replace = no
+}
+
+# Jedi Ruins
+sffaforce_building_jedi_ruins = {
+	is_listed = no
+	
+	cost = {
+	}
+
+	required_resources = {
+	}
+	
+	produced_resources = {
+		society_research = 6
+	}
+	
+	upgrades = {
+		sffaforce_building_jedi_temple
+	}
+	
+	ai_replace = no
+}
+
+# Jedi Restored Ruins
+sffaforce_building_jedi_temple = {
+	is_listed = no
+	
+	icon = "sffaforce_building_jedi_ruins"
+	
+	cost = {
+	}
+
+	required_resources = {
+	}
+	
+	produced_resources = {
+		society_research = 12
+	}
+	
+	upgrades = {
+	}
+	
+	ai_replace = no
+}
+
+# Jeed'ai Ruins
+sffaforce_building_grey_ruins = {
+
+	is_listed = no
+	
+	cost = {
+	}
+
+	required_resources = {
+	}
+	
+	produced_resources = {
+		society_research = 6
+	}
+	
+	upgrades = {
+		sffaforce_building_grey_ruins
+	}
+	
+	ai_replace = no
+}
+
+# Jeed'ai Restored Ruins
+sffaforce_building_grey_temple = {
+	is_listed = no
+	
+	
+	cost = {
+	}
+
+	required_resources = {
+	}
+	
+	produced_resources = {
+		society_research = 12
+	}
+	
+	upgrades = {
+	}
+	
+	ai_replace = no
+}
